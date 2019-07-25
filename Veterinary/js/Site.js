@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-   
+
 
     $('.list-group-item').click(function () {
         var id = $(this).attr('data-ID');
@@ -44,5 +44,7 @@
                 alert('Login Failed')
             },
         });
+    })
+
 })
 
