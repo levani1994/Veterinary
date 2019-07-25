@@ -23,26 +23,25 @@
         });
     });
 
-    $('#LoginBtn').click(function () {
-        var data = {};
 
-        data.Email = $('#LoginEmail').val();
-        data.Password = $('#LoginPassword').val();
-        $.ajax({
-            url: '/Account/Login',
-            method: 'POST',
-            data: {
-                model: data,
-                returnUrl: 'Home/Index'
-            },
-            success: function () {
-                alert('success')
-            },
-            error: function () {
-                alert('Login Failed')
-            },
-        });
+
+    //$('#LoginBtn').click(function () {
         
-    });
+    //       Console.log("deded");
+    //    var email = $('#LoginEmail').val();
+    //    var password = $('#LoginPassword').val();
+        
+    //    $.ajax({
+    //        url: 'Login',
+    //        method: 'post',
+    //        data: {
+    //            'Email': email, 'Password': password},
+
+    //        success: function () {
+    //            Console.log("deded")
+    //        }
+    //    });
+        
+    //});
 })
 

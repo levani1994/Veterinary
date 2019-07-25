@@ -165,6 +165,7 @@
     <Content Include="images\icons\calendar.svg" />
     <Content Include="images\icons\dzvali.png" />
     <Content Include="images\icons\fb.png" />
+    <Content Include="images\img4.jpg" />
     <Content Include="images\icons\instagram.png" />
     <Content Include="images\icons\search.png" />
     <Content Include="images\img1.jpg" />
@@ -240,6 +241,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
