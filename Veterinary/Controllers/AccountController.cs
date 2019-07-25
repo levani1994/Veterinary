@@ -68,9 +68,7 @@ namespace Veterinary.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
-
-
-
+        
 
 
         // რეგისტრაცია
@@ -115,6 +113,8 @@ namespace Veterinary.Controllers
             db.NotConfirmedUsers.InsertOnSubmit(NotConfirmedUser);
             db.SubmitChanges();
 
+
+
             // მაილზე კოდის გაგზავნა
             try
             {
@@ -150,15 +150,11 @@ namespace Veterinary.Controllers
                 ViewBag.Error = "Some Error";
             }
             return View();
-        
-            
         }
 
 
 
-
-
-        // ელ.ფოსტით დადასტურება
+        // ელ.ფოსტით დადასტურებულები
         public ActionResult Confirmation(string id)           //ეს რავი თუ გინდა შენებურად გადააკეთე 
         {
             var notConfirmed = db.NotConfirmedUsers.FirstOrDefault(x => x.ConfirmationCode == id);
