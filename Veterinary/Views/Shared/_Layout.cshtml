@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Geoton Project</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <script>
+        var Path = "@Url.Content("~/")";
+    </script>
+</head>
+<body>
+
+
+    <!-- header -->
+    <header class="header">
+        <div class="header__container flex justify-center">
+            <div class="header__logo">
+                <a href="#">
+                    <img src="~/images/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <nav class="header__navbar">
+                <ul class="flex align-items">
+                    <li class="header__navbar-li"><a class="header__navbar-a" href="about.html">ჩვენს შესახებ</a></li>
+                    <li class="header__navbar-li"><a class="header__navbar-a" href="~/Food">კვება</a></li>
+                    <li class="header__navbar-li"><a class="header__navbar-a" href="#">მოვლა</a></li>
+                    <li class="header__navbar-li"><a class="header__navbar-a" href="#">საინტერესო</a></li>
+                    <li class="header__navbar-li"><a class="header__navbar-a" href="#">ფორუმი</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__right flex">
+                <div class="header__search w-100 flex align-items">
+                    <input class="form__control" type="text" placeholder="ძიება...">
+                    <img class="search__img" src="~/images/icons/search.png" alt="search">
+                </div>
+
+                <div class="login open__popup" data-popup="login">
+                    <img src="~/images/icons/fb.png" alt="fb">
+                    შესვლა
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    @RenderBody()
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <ul class="footer__social">
+            <li><a href="#"><img src="~/images/icons/fb.png" alt="fb"></a></li>
+            <li><a href="#"><img src="~/images/icons/instagram.png" alt="instagram"></a></li>
+        </ul>
+    </footer>
+
+
+
+    <div class="popup login__popup popup-close" data-popup="login">
+        <div class="popup__container">
+            <div class="popup__top">
+                <h4>სისტემაში შესვლა</h4>
+            </div>
+
+            <div class="popup__bottom">
+                <form id="login-form" method="post">
+
+                    <div class="form__group">
+                        <label>ელ.ფოსტა</label>
+                        <input type="email" class="form__control">
+                    </div>
+
+                    <div class="form__group">
+                        <label>პაროლი</label>
+                        <input type="password" class="form__control">
+                    </div>
+
+                    <div class="btns">
+                        <button class="btn btn__yellow">შესვლა</button>
+                        <div class="btn btn__yellow" id="show-register-form">რეგისტრაცია</div>
+                    </div>
+
+                    <div class="auth">
+                        <span>ავტორიზაცია სოციალური ქსელით</span> <img src="~/images/icons/auth.png" alt="auth">
+                    </div>
+
+
+                </form>
+
+                <form id="registration-form" style="display:none;">
+                    <div class="form__group">
+                        <label>სახელი</label>
+                        <input type="text" name="name" class="form__control">
+                    </div>
+
+                    <div class="form__group">
+                        <label>გვარი</label>
+                        <input type="text" name="surName" class="form__control">
+                    </div>
+
+                    <div class="form__group">
+                        <label>დაბადების თარიღი</label>
+                        <input type="text" name="birthdate" class="form__control">
+                        <img class="calendar__img" src="~/images/icons/calendar.svg" alt="calendar">
+                    </div>
+
+                    <div class="form__group">
+                        <label>ძაღლის ჯიში</label>
+                        <input type="text" name="dog_breed" class="form__control">
+                    </div>
+
+                    <div class="form__group">
+                        <label>ელ.ფოსტა</label>
+                        <input type="text" name="mail" class="form__control">
+                    </div>
+
+                    <div class="form__group">
+                        <label>პაროლი</label>
+                        <input type="password" name="password" class="form__control">
+                    </div>
+
+                    <div class="form__group">
+                        <label>გაიმეორეთ პაროლი</label>
+                        <input type="password" name="repeatPassword" class="form__control">
+                    </div>
+
+
+                    <div class="btns">
+                        <div class="btn btn__yellow">რეგისტრაცია</div>
+                        <div class="btn btn__yellow" id="show-login-form">გაუქმება</div>
+                    </div>
+
+
+                    <div class="auth">
+                        <span>რეგისტრაცია სოციალური ქსელით</span> <img src="~/images/icons/auth.png" alt="auth">
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/js/jquery-3.4.1.min.js"></script>
+    <script src="~/js/slick.min.js"></script>
+    <script src="~/js/index.js"></script>
+    <script src="~/js/Site.js"></script>
+</body>
+</html>

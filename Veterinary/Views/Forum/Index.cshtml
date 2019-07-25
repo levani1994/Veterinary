@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Veterinary.Models.Category>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item first"><a href="#">Category</a></li>
+
+    </ol>
+</nav>
+
+
+
+
+
+<div class="list-group">
+
+    @foreach (var item in Model)
+    {
+
+        <div data-ID="@item.ID" class="list-group-item list-group-item-action">
+            @Html.ActionLink(item.CategoryName, "Category", new { id = item.CategoryName })
+
+        </div>
+
+
+
+    }
+</div>
+
