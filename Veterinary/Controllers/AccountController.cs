@@ -159,7 +159,7 @@ namespace Veterinary.Controllers
 
 
         // ელ.ფოსტით დადასტურება
-        public ActionResult Confirmation(string id)           //ეს რავი თუ გინდა შენებურად გადააკეთე  // იმუშაოს მთავარია :D
+        public ActionResult Confirmation(string id)           //ეს რავი თუ გინდა შენებურად გადააკეთე 
         {
             var notConfirmed = db.NotConfirmedUsers.FirstOrDefault(x => x.ConfirmationCode == id);
 
@@ -167,16 +167,17 @@ namespace Veterinary.Controllers
                 new ConfirmedUser
                 {
                     Name = notConfirmed.Name,
+                    Surname = notConfirmed.Surname,
+                    BirthDate = notConfirmed.BirthDate,
+                    DogBreed = notConfirmed.DogBreed,
                     Email = notConfirmed.Email,
                     Password = notConfirmed.Password,
                     CreateDate = DateTime.Now,
                     RequestIp = notConfirmed.RequestIp
                 });
-            db.SubmitChanges();
+          
 
-            db.NotConfirmedUsers.DeleteAllOnSubmit(
-                db.NotConfirmedUsers.Where(z => z.Email == notConfirmed.Email
-                ));
+            db.NotConfirmedUsers.DeleteAllOnSubmit(db.NotConfirmedUsers.Where(z => z.Email == notConfirmed.Email));
             db.SubmitChanges();
             return RedirectToAction("Login");
         }
