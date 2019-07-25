@@ -124,7 +124,7 @@ namespace Veterinary.Controllers
                     var receiverEmail = new MailAddress(registrationViewModel.mail, "Receiver");
                     var password = "eleanoragt";
                     var sub = "ელ.ფოსტის დადასტურება";
-                    var body = "დაადასტურეთ ელ.ფოსტა ამ ლინკზე გადასვლით: http://localhost:54637/Account/Confirmation/" + confirnCode; // view რო გვექნება მერე გავტესტავ, წესით უდნა იმუშაოს. შენ რომ გაუშვებ localHost შეცვალე
+                    var body = "დაადასტურეთ თქვენი ელ.ფოსტა მოცემულ ლინკზე გადასვლით: http://localhost:54637/Account/Confirmation/" + confirnCode; // view რო გვექნება მერე გავტესტავ, წესით უდნა იმუშაოს. შენ რომ გაუშვებ localHost შეცვალე
                     var smtp = new SmtpClient
                     {
                         Host = "smtp.gmail.com",
