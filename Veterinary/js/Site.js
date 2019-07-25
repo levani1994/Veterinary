@@ -25,23 +25,24 @@
 
 
 
-    //$('#LoginBtn').click(function () {
-        
-    //       Console.log("deded");
-    //    var email = $('#LoginEmail').val();
-    //    var password = $('#LoginPassword').val();
-        
-    //    $.ajax({
-    //        url: 'Login',
-    //        method: 'post',
-    //        data: {
-    //            'Email': email, 'Password': password},
+    $('#LoginBtn').click(function () {
+        var data = {};
 
-    //        success: function () {
-    //            Console.log("deded")
-    //        }
-    //    });
-        
-    //});
+        data.Email = $('#LoginEmail').val();
+        data.Password = $('#LoginPassword').val();
+        $.ajax({
+            url: '/Account/Login',
+            method: 'POST',
+            data: {
+                model: data,
+                returnUrl: 'Home/Index'
+            },
+            success: function () {
+                alert('success')
+            },
+            error: function () {
+                alert('Login Failed')
+            },
+        });
 })
 
