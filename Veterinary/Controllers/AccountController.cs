@@ -37,7 +37,7 @@ namespace Veterinary.Controllers
         [HttpPost]
         public ActionResult Login(LoginViewModel loginViewModel)
         {
-            if (String.IsNullOrEmpty(loginViewModel.Email) || String.IsNullOrEmpty(loginViewModel.Password))
+            if (string.IsNullOrEmpty(loginViewModel.Email) || string.IsNullOrEmpty(loginViewModel.Password))
             {
                 ViewBag.Error = "შეავსეთ გამოტოვებული ველები !";
                 return View();
@@ -54,7 +54,7 @@ namespace Veterinary.Controllers
             }
             else
             {
-                Session["user"] = User;
+                Session["user"] = User.Name;
                 return RedirectToAction("Index", "Home");
             }
         }

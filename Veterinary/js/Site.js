@@ -26,16 +26,16 @@
 
 
     $('#LoginBtn').click(function () {
-        var data = {};
+      
 
-        data.Email = $('#LoginEmail').val();
-        data.Password = $('#LoginPassword').val();
+        var email = $('#LoginEmail').val();
+        var password = $('#LoginPassword').val();
         $.ajax({
             url: '/Account/Login',
-            method: 'POST',
+            method: 'post',
             data: {
-                model: data,
-                returnUrl: 'Home/Index'
+                'Email': email, 'Password': password
+               
             },
             success: function () {
                 alert('success')

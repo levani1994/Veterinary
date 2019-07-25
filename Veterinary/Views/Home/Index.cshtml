@@ -1,6 +1,9 @@
 ﻿@Html.Partial("~/Views/Shared/_BannerSliderPartialView.cshtml")
 
 
+
+ @ViewBag.name;
+
 <!-- news container -->
 <section class="other__pages">
     <div class="container">
@@ -9,19 +12,15 @@
                 <div class="btn__image">
                     <img src="~/images/icons/dzvali.png" alt="add">
                 </div>
-
                 <h5>წვრთნა</h5>
             </a>
-
             <a href="veterinary.html" class="other__pages-btn text-center">
                 <div class="btn__image">
                     <img src="~/images/icons/add.png" alt="add">
                 </div>
-
                 <h5>ვეტერინარი</h5>
             </a>
         </div>
-
 
         <!-- news -->
         <div class="news">
@@ -30,15 +29,12 @@
                     <div class="news__item" style="background-image: url('@Url.Content("~/images/news1.png")')">
                         <h5 class="news__title">როგორ მოვუაროთ ძაღლის ბეწვს</h5>
                     </div>
-
                     <div class="news__item" style="background-image: url('@Url.Content("~/images/news2.png")')">
                         <h5 class="news__title">როგორ მოვუაროთ ძაღლის ბეწვს</h5>
                     </div>
-
                     <div class="news__item" style="background-image: url('@Url.Content("~/images/news3.png")')">
                         <h5 class="news__title">როგორ მოვუაროთ ძაღლის ბეწვს</h5>
                     </div>
-
                     <div class="news__item" style="background-image: url('@Url.Content("~/images/news4.png")')">
                         <h5 class="news__title">როგორ მოვუაროთ ძაღლის ბეწვს</h5>
                     </div>

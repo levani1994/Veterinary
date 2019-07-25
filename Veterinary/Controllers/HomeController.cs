@@ -11,7 +11,7 @@ namespace Veterinary.Controllers
         
         public ActionResult Index()
         {
-
+            ViewBag.name = Session["user"];
             return View();
         }
 
