@@ -11,17 +11,11 @@ namespace Veterinary.Controllers
 {
     public class AccountController : BaseController
     {
-
-
-
-
         public ActionResult Login()
         {
             return View();
         }
-        
-
-
+      
 
         public ActionResult LogOut()
         {
@@ -30,10 +24,6 @@ namespace Veterinary.Controllers
             System.Web.HttpContext.Current.Session.RemoveAll();
             return RedirectToAction("Login");
         }
-
-
-
-
 
 
         public ActionResult Registration()
