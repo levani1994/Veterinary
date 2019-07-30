@@ -1,0 +1,52 @@
+﻿
+
+<form action="/Account/Registration" method="post" id="registration-form" style="display:none;">
+    <div class="form__group">
+        <label>სახელი</label>
+        <input type="text" name="name" class="form__control">
+    </div>
+
+    <div class="form__group">
+        <label>გვარი</label>
+        <input type="text" name="surName" class="form__control">
+    </div>
+
+    <div class="form__group">
+        <label>დაბადების თარიღი</label>
+        <input type="text" name="birthdate" class="form__control">
+        <img class="calendar__img" src="~/images/icons/calendar.svg" alt="calendar">
+    </div>
+
+    <div class="form__group">
+        <label>ძაღლის ჯიში</label>
+        <input type="text" name="dog_breed" class="form__control">
+    </div>
+
+    <div class="form__group">
+        <label>ელ.ფოსტა</label>
+        <input type="text" name="mail" class="form__control">
+    </div>
+
+    <div class="form__group">
+        <label>პაროლი</label>
+        <input type="password" name="password" class="form__control">
+    </div>
+
+    <div class="form__group">
+        <label>გაიმეორეთ პაროლი</label>
+        <input type="password" name="repeatPassword" class="form__control">
+    </div>
+
+
+    <div class="btns">
+        <button type="submit" class="btn btn__yellow">რეგისტრაცია</button>
+        <div class="btn btn__yellow" id="show-login-form">გაუქმება</div>
+    </div>
+
+
+    <div class="auth">
+        <span>რეგისტრაცია სოციალური ქსელით</span> <img src="~/images/icons/auth.png" alt="auth">
+    </div>
+
+
+</form>
