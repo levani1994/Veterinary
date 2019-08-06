@@ -1,35 +1,31 @@
 ﻿
-@{
-    ViewBag.Title = "Login";
-}
+<form action="Accout/Login" id="login-form" method="post" >
 
-<h2>Login</h2>
-
-<form action="/Account/Login" method="post">
-    <div class="form-group">
-        <input class="form-control" type="email" name="Email" placeholder="შეიყვანეთ ელ.ფოსტის მისამატთი" />
-    </div>
-    <div class="form-group">
-        <input id="PasswordInput" class="form-control" type="password" name="Password" placeholder="შეიყვანეთ პაროლი" />
-    </div>
-    <div class="form-group">
-        <span id="PasswordTypeToggle" class="glyphicon glyphicon-eye-open"></span>
+    <div class="form__group">
+        <label>ელ.ფოსტა</label>
+        <input id="LoginEmail" type="email" class="form__control">
     </div>
 
-    <div class="form-group">
-        <input class="btn btn-success" type="submit" value="შესვლა" />
-
+    <div class="form__group">
+        <label>პაროლი</label>
+        <input id="LoginPassword" type="password" class="form__control">
     </div>
 
-    <a href="~/Account/Registration">რეგისტრაცია</a>
+    <div class="btns">
+        <button id="LoginBtn" class="btn btn__yellow">შესვლა</button>
+        <div class="btn btn__yellow" id="show-register-form">რეგისტრაცია</div>
+    </div>
+
+    <div class="auth">
+        <span>ავტორიზაცია სოციალური ქსელით</span> <img src="~/images/icons/auth.png" alt="auth">
+    </div>
 
 
-    <p style="color:red">@ViewBag.error</p>
 </form>
 
 <form action="/Account/PasswordRecover" method="get">
     <div class="form-group">
-        <input class=" btn btn-success" type="submit" value="პაროლის აღდგენა" />
+        <input class=" btn btn__yellow" type="submit" value="პაროლის აღდგენა" />
 
     </div>
 </form>

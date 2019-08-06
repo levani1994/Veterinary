@@ -18,7 +18,7 @@
     <header class="header">
         <div class="header__container flex justify-center">
             <div class="header__logo">
-                <a href="#">
+                <a href="/Home/Index">
                     <img src="~/images/logo.png" alt="logo">
                 </a>
             </div>
@@ -55,31 +55,9 @@
 
             <div class="popup__bottom">
 
-                <form id="login-form" method="post">
+                @Html.Partial("~/Views/Account/Login.cshtml")
 
-                    <div class="form__group">
-                        <label>ელ.ფოსტა</label>
-                        <input id="LoginEmail" type="email" class="form__control">
-                    </div>
-
-                    <div class="form__group">
-                        <label>პაროლი</label>
-                        <input id="LoginPassword" type="password" class="form__control">
-                    </div>
-
-                    <div class="btns">
-                        <button id="LoginBtn" class="btn btn__yellow">შესვლა</button>
-                        <div class="btn btn__yellow" id="show-register-form">რეგისტრაცია</div>
-                    </div>
-
-                    <div class="auth">
-                        <span>ავტორიზაცია სოციალური ქსელით</span> <img src="~/images/icons/auth.png" alt="auth">
-                    </div>
-
-
-                </form>
-
-                @Html.Partial("~/Views/Shared/_RegisterPartialView.cshtml")
+                @Html.Partial("~/Views/Account/Registration.cshtml")
             </div>
         </div>
     </div>

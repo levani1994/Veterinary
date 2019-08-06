@@ -13,7 +13,7 @@ namespace Veterinary.Controllers
     {
         public ActionResult Login()
         {
-            return View();
+            return RedirectToAction("Login");
         }
       
 
