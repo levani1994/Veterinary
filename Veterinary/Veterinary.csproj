@@ -242,7 +242,6 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Shared\_RegisterPartialView.cshtml" />
     <Content Include="Views\Account\Registration.cshtml" />
   </ItemGroup>
   <ItemGroup>
