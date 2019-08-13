@@ -105,7 +105,7 @@ namespace Veterinary.Controllers
                 db.NotConfirmedUsers.InsertOnSubmit(NotConfirmedUser);
                 db.SubmitChanges();
 
-
+                //abbaba
 
                 // მაილზე კოდის გაგზავნა
                 try
