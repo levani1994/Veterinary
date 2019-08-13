@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+using System.ComponentModel.DataAnnotations;
+
 namespace Veterinary.Models
 {
     public class RegistrationViewModel
     {
+        [Required(ErrorMessage = " {0} არის აუცილებელი")]
         public string name { get; set; }
         public string surName { get; set; }
         public string birthdate { get; set; }
