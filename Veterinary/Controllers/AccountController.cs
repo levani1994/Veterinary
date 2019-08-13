@@ -106,7 +106,7 @@ namespace Veterinary.Controllers
                 db.SubmitChanges();
 
               
-
+                // Cavamate
                 // მაილზე კოდის გაგზავნა
                 try
                 {
