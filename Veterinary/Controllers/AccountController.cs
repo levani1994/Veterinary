@@ -55,13 +55,14 @@ namespace Veterinary.Controllers
             else
             {
                 Session["user"] = User.Name;
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction( "Index", "Home");
             }
         }
 
 
 
         // რეგისტრაცია
+        
         [HttpPost]
         public ActionResult Registration(RegistrationViewModel registrationViewModel)
         {
@@ -154,7 +155,7 @@ namespace Veterinary.Controllers
             var notConfirmed = db.NotConfirmedUsers.FirstOrDefault(x => x.ConfirmationCode == id);
 
             db.ConfirmedUsers.InsertOnSubmit(
-                new ConfirmedUser
+                new ConfirmedUser()
                 {
                     Name = notConfirmed.Name,
                     Surname = notConfirmed.Surname,
@@ -169,7 +170,7 @@ namespace Veterinary.Controllers
 
             db.NotConfirmedUsers.DeleteAllOnSubmit(db.NotConfirmedUsers.Where(z => z.Email == notConfirmed.Email));
             db.SubmitChanges();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Home");
         }
 
 

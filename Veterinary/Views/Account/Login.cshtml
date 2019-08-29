@@ -1,28 +1,30 @@
 ﻿
-<form action="/Accout/Login" id="login-form" method="post" >
+<form action="/Account/Login" id="login-form" method="post" >
 
     <div class="form__group">
         <label>ელ.ფოსტა</label>
-        <input id="LoginEmail" type="email" class="form__control">
+        <input name="Email" type="email" class="form__control">
     </div>
 
     <div class="form__group">
         <label>პაროლი</label>
-        <input id="LoginPassword" type="password" class="form__control">
+        <input name="Password" type="password" class="form__control">
     </div>
 
     <div class="btns">
-        <button id="LoginBtn" class="btn btn__yellow">შესვლა</button>
+        <button id="LoginBtn" class="btn btn__yellow" type="submit">შესვლა</button>
         <div class="btn btn__yellow" id="show-register-form">რეგისტრაცია</div>  
         
     </div>
 
     <div class="auth">
         <span>ავტორიზაცია სოციალური ქსელით</span> <img src="~/images/icons/auth.png" alt="auth">
+       
     </div>
 
     <div class="btns">
       
-        <div class="btn btn__yellow" id="show-register-form">პაროლის აღდგენა</div>
+        <div class="btn btn__yellow" id="show-register-form"> @ViewBag.error</div>
+       
     </div>
 </form>
