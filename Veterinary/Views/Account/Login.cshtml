@@ -1,5 +1,7 @@
 ﻿@model Veterinary.Models.LoginViewModel
-<form action="/Account/Login" id="login-form" method="post" >
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<form action="/Account/Login" id="login-form" method="post">
 
     <div class="form__group">
         <label>ელ.ფოსტა</label>
@@ -15,18 +17,18 @@
 
     <div class="btns">
         <button id="LoginBtn" class="btn btn__yellow" type="submit">შესვლა</button>
-        <div class="btn btn__yellow" id="show-register-form">რეგისტრაცია</div>  
-        
+        <div class="btn btn__yellow" id="show-register-form">რეგისტრაცია</div>
+
     </div>
 
     <div class="auth">
         <span>ავტორიზაცია სოციალური ქსელით</span> <img src="~/images/icons/auth.png" alt="auth">
-       
+
     </div>
 
     <div class="btns">
-      
+
         <div class="btn btn__yellow" id="show-register-form"> @ViewBag.error</div>
-       
+
     </div>
 </form>
