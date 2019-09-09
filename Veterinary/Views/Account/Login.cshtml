@@ -1,13 +1,15 @@
-﻿
+﻿@model Veterinary.Models.LoginViewModel
 <form action="/Account/Login" id="login-form" method="post" >
 
     <div class="form__group">
         <label>ელ.ფოსტა</label>
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger", @style = "color:red" })
         <input name="Email" type="email" class="form__control">
     </div>
 
     <div class="form__group">
         <label>პაროლი</label>
+        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger", @style = "color:red" })
         <input name="Password" type="password" class="form__control">
     </div>
 
