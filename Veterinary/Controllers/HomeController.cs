@@ -15,6 +15,15 @@ namespace Veterinary.Controllers
             return View();
         }
 
+        //public ActionResult Care()
+        //{
+        //    return View();
+        //}
+        
+        public ActionResult Food()
+        {
+            return View();
+        }
   
     }
 }

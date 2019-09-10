@@ -25,8 +25,8 @@
 
 
 
-    $('#LoginBtn').click(function () {
-      
+    $('#LoginBtn').click(function (e) {
+        e.preventDefault()
 
         var email = $('#LoginEmail').val();
         var password = $('#LoginPassword').val();
@@ -37,8 +37,10 @@
                 'Email': email, 'Password': password
                
             },
-            success: function () {
+            success: function (response) {
+                console.log(response, 'response')
                 alert('success')
+                return
             },
             error: function () {
                 alert('Login Failed')

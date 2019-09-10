@@ -123,8 +123,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CareController.cs" />
     <Compile Include="Controllers\ForumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\VeterinaryListController.cs" />
@@ -193,6 +195,7 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\Index.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\arlrdbd\arial_geo.svg" />
     <Content Include="fonts\MyriadPro-Regular\MyriadPro-Regular.svg" />
@@ -207,6 +210,7 @@
     <Content Include="images\icons\calendar.svg" />
     <Content Include="images\icons\dzvali.png" />
     <Content Include="images\icons\fb.png" />
+    <Content Include="images\image_07.jpg" />
     <Content Include="images\img4.jpg" />
     <Content Include="images\icons\instagram.png" />
     <Content Include="images\icons\search.png" />
@@ -293,6 +297,9 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Registration.cshtml" />
+    <Content Include="Views\Care\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Home\Food.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
