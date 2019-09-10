@@ -1,21 +1,19 @@
 ﻿@model IEnumerable<Veterinary.Models.Topic>
-
-
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_ForumLayout.cshtml";
+}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li id="first" class="breadcrumb-item ">Category</li>
         <li id="secound" class="breadcrumb-item ">@ViewBag.name</li>
-
     </ol>
 </nav>
-
-
 
 
 <button type="button" style="margin-bottom:20px;" class="btn btn-primary" id="add" data-toggle="modal" data-target="#exampleModal">
     ახალი თემა
 </button>
-
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -29,7 +27,6 @@
                 <div class="form-group">
                     <input class="form-control" id="ProductName" type="text" />
 
-
                 </div>
             </div>
             <div class="modal-footer">
@@ -41,15 +38,11 @@
 </div>
 
 
-
-
 <div class="list-group">
-
     @foreach (var item in Model)
     {
 
         <div data-ID="@item.ID" class="list-group-item list-group-item-action">
-
 
             @Html.ActionLink(@item.TopicName, "Topic", new { id = item.TopicName })
         </div>

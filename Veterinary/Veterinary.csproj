@@ -300,6 +300,7 @@
     <Content Include="Views\Care\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Home\Food.cshtml" />
+    <Content Include="Views\Shared\_ForumLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
