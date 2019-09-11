@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Geoton Project</title>
     <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/Index.css">
 
     <script>
         var Path = "@Url.Content("~/")";
@@ -16,6 +17,7 @@
 
     <!-- header -->
     <header class="header">
+        
         <div class="header__container flex justify-center">
             <div class="header__logo">
                 <a href="/Home/Index">
@@ -25,11 +27,11 @@
 
             <nav class="header__navbar">
                 <ul class="flex align-items">
-                    <li class="header__navbar-li"><a class="header__navbar-a" href="about.html">ჩვენს შესახებ</a></li>
-                    <li class="header__navbar-li"><a class="header__navbar-a" href="~/Food">კვება</a></li>
-                    <li class="header__navbar-li"><a class="header__navbar-a" href="#">მოვლა</a></li>
+                    <li class="header__navbar-li"><a class="header__navbar-a" href="~/About">ჩვენს შესახებ</a></li>
+                    <li class="header__navbar-li"><a class="header__navbar-a" href="~/Home/Food">კვება</a></li>
+                    <li class="header__navbar-li"><a class="header__navbar-a" href="~/Care">მოვლა</a></li>
                     <li class="header__navbar-li"><a class="header__navbar-a" href="#">საინტერესო</a></li>
-                    <li class="header__navbar-li"><a class="header__navbar-a" href="#">ფორუმი</a></li>
+                    <li class="header__navbar-li"><a class="header__navbar-a" href="~/Forum">ფორუმი</a></li>
                 </ul>
             </nav>
 
@@ -41,6 +43,7 @@
 
                 <div class="login open__popup" data-popup="login">
                     <img src="~/images/icons/fb.png" alt="fb">
+                    @ViewBag.name
                     შესვლა
                 </div>
             </div>
@@ -68,11 +71,6 @@
 
 
 
-
-
-
-
-
     <!-- footer -->
     <footer class="footer">
         <ul class="footer__social">
@@ -81,7 +79,9 @@
         </ul>
     </footer>
 
-    <script src="~/js/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/js/slick.min.js"></script>
     <script src="~/js/index.js"></script>
     <script src="~/js/Site.js"></script>

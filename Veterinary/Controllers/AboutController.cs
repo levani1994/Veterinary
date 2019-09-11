@@ -6,21 +6,12 @@ using System.Web.Mvc;
 
 namespace Veterinary.Controllers
 {
-    public class HomeController : BaseController
+    public class AboutController : Controller
     {
-        
+        // GET: About
         public ActionResult Index()
         {
-            ViewBag.name = Session["user"];
             return View();
         }
-
-        
-        
-        public ActionResult Food()
-        {
-            return View();
-        }
-  
     }
 }

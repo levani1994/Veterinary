@@ -55,13 +55,14 @@ namespace Veterinary.Controllers
             else
             {
                 Session["user"] = User.Name;
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction( "Index", "Home");
             }
         }
-        
+
 
 
         // რეგისტრაცია
+        
         [HttpPost]
         public ActionResult Registration(RegistrationViewModel registrationViewModel)
         {
@@ -71,78 +72,82 @@ namespace Veterinary.Controllers
                 return View();
             }
 
-            if (!ModelState.IsValid)
+            else if (!ModelState.IsValid)
             {
                 return View(registrationViewModel);
             }
 
-            if (db.ConfirmedUsers.Where(x => x.Email == registrationViewModel.mail).Count() > 0) //ეს კაი როჯაა
+            else if (db.ConfirmedUsers.Where(x => x.Email == registrationViewModel.mail).Count() > 0) //ეს კაი როჯაა
             {
                 ViewBag.error = "ელფოსტა უკვე დარეგისტრირებულია !";
                 return View();
             }
 
-            if (registrationViewModel.password != registrationViewModel.repeatPassword)
+            else if (registrationViewModel.password != registrationViewModel.repeatPassword)
             {
                 ViewBag.error = "პაროლები არ ემთხვევა";
                 return View();
             }
-            string confirnCode = Helper.RandomString();
-            var NotConfirmedUser = new NotConfirmedUser()
+            else
             {
-                Name = registrationViewModel.name,
-                Surname = registrationViewModel.surName,
-                BirthDate = registrationViewModel.birthdate,
-                DogBreed = registrationViewModel.dog_breed,
-                Email = registrationViewModel.mail,
-                Password = Helper.ComputeSha256Hash(registrationViewModel.password + Helper.AuthKey),
-                CreateDate = DateTime.Now,
-                ConfirmationCode = confirnCode,
-                RequestIp = Request.UserHostAddress,
-            };
-            db.NotConfirmedUsers.InsertOnSubmit(NotConfirmedUser);
-            db.SubmitChanges();
-
-
-
-            // მაილზე კოდის გაგზავნა
-            try
-            {
-                if (ModelState.IsValid)
+                string confirmCode = Helper.RandomString();
+                var NotConfirmedUser = new NotConfirmedUser()
                 {
-                    var senderEmail = new MailAddress("levani.jalaghonia09@geolab.edu.ge", "veterinar");
-                    var receiverEmail = new MailAddress(registrationViewModel.mail, "Receiver");
-                    var password = "eleanoragt";
-                    var sub = "ელ.ფოსტის დადასტურება";
-                    var body = "დაადასტურეთ თქვენი ელ.ფოსტა მოცემულ ლინკზე გადასვლით: http://localhost:54637/Account/Confirmation/" + confirnCode; // view რო გვექნება მერე გავტესტავ, წესით უდნა იმუშაოს. შენ რომ გაუშვებ localHost შეცვალე
-                    var smtp = new SmtpClient
+                    Name = registrationViewModel.name,
+                    Surname = registrationViewModel.surName,
+                    BirthDate = registrationViewModel.birthdate,
+                    DogBreed = registrationViewModel.dog_breed,
+                    Email = registrationViewModel.mail,
+                    Password = Helper.ComputeSha256Hash(registrationViewModel.password + Helper.AuthKey),
+                    CreateDate = DateTime.Now,
+                    ConfirmationCode = confirmCode,
+                    RequestIp = Request.UserHostAddress,
+                };
+                db.NotConfirmedUsers.InsertOnSubmit(NotConfirmedUser);
+                db.SubmitChanges();
+
+              
+               
+                // მაილზე კოდის გაგზავნა
+                try
+                {
+                    if (ModelState.IsValid)
                     {
-                        Host = "smtp.gmail.com",
-                        Port = 587,
-                        EnableSsl = true,
-                        DeliveryMethod = SmtpDeliveryMethod.Network,
-                        UseDefaultCredentials = false,
-                        Credentials = new NetworkCredential(senderEmail.Address, password)
-                    };
-                    using (var mess = new MailMessage(senderEmail, receiverEmail)
-                    {
-                        Subject = sub,
-                        Body = body
-                    })
-                    {
-                        smtp.Send(mess);
+                        var senderEmail = new MailAddress("levani.jalaghonia09@geolab.edu.ge", "veterinar");
+                        var receiverEmail = new MailAddress(registrationViewModel.mail, "Receiver");
+                        var password = "eleanoragt";
+                        var sub = "ელ.ფოსტის დადასტურება";
+                        var body = "დაადასტურეთ თქვენი ელ.ფოსტა მოცემულ ლინკზე გადასვლით: http://localhost:54637/Account/Confirmation/" + confirmCode; // view რო გვექნება მერე გავტესტავ, წესით უდნა იმუშაოს. შენ რომ გაუშვებ localHost შეცვალე
+                        var smtp = new SmtpClient
+                        {
+                            Host = "smtp.gmail.com",
+                            Port = 587,
+                            EnableSsl = true,
+                            DeliveryMethod = SmtpDeliveryMethod.Network,
+                            UseDefaultCredentials = false,
+                            Credentials = new NetworkCredential(senderEmail.Address, password)
+                        };
+                        using (var mess = new MailMessage(senderEmail, receiverEmail)
+                        {
+                            Subject = sub,
+                            Body = body
+                        })
+                        {
+                            smtp.Send(mess);
+                        }
+                        return RedirectToAction("succes", new { email = NotConfirmedUser.Email });
                     }
-                   return RedirectToAction("succes", new { email = NotConfirmedUser.Email });
                 }
+
+
+                catch (Exception)
+                {
+                    ViewBag.Error = "Some Error";
+                }
+                return View();
             }
-            catch (Exception)
-            {
-                ViewBag.Error = "Some Error";
-            }
-            return View();
+
         }
-
-
 
         // ელ.ფოსტით დადასტურებულები
         public ActionResult Confirmation(string id)           //ეს რავი თუ გინდა შენებურად გადააკეთე 
@@ -150,7 +155,7 @@ namespace Veterinary.Controllers
             var notConfirmed = db.NotConfirmedUsers.FirstOrDefault(x => x.ConfirmationCode == id);
 
             db.ConfirmedUsers.InsertOnSubmit(
-                new ConfirmedUser
+                new ConfirmedUser()
                 {
                     Name = notConfirmed.Name,
                     Surname = notConfirmed.Surname,
@@ -165,7 +170,7 @@ namespace Veterinary.Controllers
 
             db.NotConfirmedUsers.DeleteAllOnSubmit(db.NotConfirmedUsers.Where(z => z.Email == notConfirmed.Email));
             db.SubmitChanges();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Home");
         }
 
 

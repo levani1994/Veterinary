@@ -1,45 +1,48 @@
-﻿
-@{
- 
-//    Layout = "~/Views/Shared/_RegisterPartialView.cshtml";
-}
+﻿@model Veterinary.Models.RegistrationViewModel
 
-
-
-
+@Html.AntiForgeryToken()
 <form action="/Account/Registration" method="post" id="registration-form" style="display:none;">
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form__group">
+        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
         <label>სახელი</label>
         <input type="text" name="name" class="form__control">
     </div>
 
     <div class="form__group">
+        @Html.ValidationMessageFor(model => model.surName, "", new { @class = "text-danger" })
         <label>გვარი</label>
         <input type="text" name="surName" class="form__control">
     </div>
 
     <div class="form__group">
+        @Html.ValidationMessageFor(model => model.birthdate, "", new { @class = "text-danger" })
         <label>დაბადების თარიღი</label>
         <input type="text" name="birthdate" class="form__control">
         <img class="calendar__img" src="~/images/icons/calendar.svg" alt="calendar">
     </div>
 
     <div class="form__group">
+        @Html.ValidationMessageFor(model => model.dog_breed, "", new { @class = "text-danger" })
         <label>ძაღლის ჯიში</label>
         <input type="text" name="dog_breed" class="form__control">
     </div>
 
     <div class="form__group">
+        @Html.ValidationMessageFor(model => model.mail, "", new { @class = "text-danger" })
         <label>ელ.ფოსტა</label>
         <input type="text" name="mail" class="form__control">
     </div>
 
     <div class="form__group">
+        @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
         <label>პაროლი</label>
         <input type="password" name="password" class="form__control">
     </div>
 
     <div class="form__group">
+        @Html.ValidationMessageFor(model => model.repeatPassword, "", new { @class = "text-danger" })
         <label>გაიმეორეთ პაროლი</label>
         <input type="password" name="repeatPassword" class="form__control">
     </div>
