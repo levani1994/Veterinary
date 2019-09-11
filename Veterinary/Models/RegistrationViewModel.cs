@@ -14,6 +14,7 @@ namespace Veterinary.Models
         [Required(ErrorMessage = " {0} არის აუცილებელი")]
         public string surName { get; set; }
         [Required(ErrorMessage = " {0} არის აუცილებელი")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MMM/yyyy}")]
         public string birthdate { get; set; }
         [Required(ErrorMessage = " {0} არის აუცილებელი")]
         public string dog_breed { get; set; }

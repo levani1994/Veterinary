@@ -12,8 +12,7 @@ openPopup.forEach(function(click){
         e.preventDefault();
     });
 });
-
-
+sads
 
 // close popup by esc 
 var popups = document.querySelectorAll('.popup-close');

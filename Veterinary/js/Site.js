@@ -1,11 +1,10 @@
 ﻿$(document).ready(function () {
 
+    $('#datePickerField').datepicker();
+
 
     $('.list-group-item').click(function () {
         var id = $(this).attr('data-ID');
-
-
-
     });
 
     $('#PriceBtn').click(function () {
@@ -23,8 +22,6 @@
         });
     });
 
-
-
     $('#LoginBtn').click(function (e) {
         e.preventDefault()
 
@@ -35,12 +32,12 @@
             method: 'post',
             data: {
                 'Email': email, 'Password': password
-               
+
             },
             success: function (response) {
                 console.log(response, 'response')
                 alert('success')
-                return
+
             },
             error: function () {
                 alert('Login Failed')
@@ -49,4 +46,3 @@
     })
 
 })
-

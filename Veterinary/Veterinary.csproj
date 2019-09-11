@@ -229,7 +229,7 @@
     <Content Include="images\user5.png" />
     <Content Include="js\index.js" />
     <Content Include="js\jquery-3.4.1.min.js" />
-    <Content Include="js\Site.js" />
+    <Content Include="js\site.js" />
     <Content Include="js\slick.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -245,6 +245,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Scripts\DatePickerReady.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -301,6 +302,7 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Home\Food.cshtml" />
     <Content Include="Views\Shared\_ForumLayout.cshtml" />
+    <Content Include="Views\Account\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
