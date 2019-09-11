@@ -8,7 +8,6 @@
 }
 
 .about-wrapper div {
-    display: inline-block;
     width: 40%;
     text-align: center;
     float: left;
@@ -51,9 +50,18 @@
 
     .food-wrapper .food-item {
         float: left;
-        width: 29%;
+        width: 32.5%;
         margin-right: 1%;
     }
+
+.food-item:nth-child(3n) {
+    margin-right: 0 !important;
+}
+
+.food-item:nth-of-type(3n) {
+    margin-right: 0 !important;
+}
+
 
 
 .about-wrapper h3 {
@@ -66,7 +74,6 @@
 }
 
 .about-wrapper div {
-    display: inline-block;
     width: 40%;
     text-align: center;
     float: left;
@@ -109,68 +116,65 @@
 
     .food-wrapper .food-item {
         float: left;
-        width: 29%;
+        width: 32.5%;
         margin-right: 1%;
-        border:1px solid #ccc;
-        padding:15px 0;
-        margin-bottom:20px;
+        border: 1px solid #ccc;
+        padding: 15px 0;
+        margin-bottom: 20px;
     }
 
 
-        .food-wrapper .food-item:nth-type(3n) {
-            margin-right: 0;
-        }
+
 
         .food-wrapper .food-item .img-wr {
-            position:relative;
-            width:100%;
-            height:250px;
-            overflow:hidden;
-            border-bottom:2px solid #ccc;
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-bottom: 2px solid #ccc;
         }
 
-        .food-wrapper .food-item .img-wr img {
-            height:100%;
-            position:absolute;
-            top:50%;
-            left:50%;
-            transform:translate(-50%, -50%);
-        }
+            .food-wrapper .food-item .img-wr img {
+                height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
 
     .food-wrapper .item-desc {
-        padding:10px;
+        padding: 10px;
     }
-    .food-wrapper .item-desc p {
-        color:black;
-        font-size:16px;
-        margin-bottom:5px;
-        font-weight:bolder;
-    }
+
+        .food-wrapper .item-desc p {
+            color: black;
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: bolder;
+        }
 
         .food-wrapper .item-desc span {
             color: black;
             font-size: 16px;
             margin-bottom: 5px;
-            display:block;
+            display: block;
         }
 
-    .food-wrapper .item-desc button {
-        display:block;
-        line-height:0;
-        width:100%;
-        background-color:black;
-        color:white;
-        height:35px;
-        font-size:18px;
-        cursor:pointer;
+        .food-wrapper .item-desc button {
+            display: block;
+            line-height: 0;
+            width: 100%;
+            background-color: #FED217;
+            color: white;
+            height: 35px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+    .food-wrapper h3 {
+        font-size: 25px;
+        font-weight: bold;
+        color: black;
+        text-align: center;
+        margin: 30px 0;
     }
-
-.food-wrapper h3 {
-    font-size:25px;
-    font-weight:bold;
-    color:black;
-    text-align:center;
-    margin:30px 0;
-}
-
-
