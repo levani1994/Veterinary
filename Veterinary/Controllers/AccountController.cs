@@ -44,6 +44,7 @@ namespace Veterinary.Controllers
 
             string password = Helper.ComputeSha256Hash(loginViewModel.Password + Helper.AuthKey);
             var User = db.ConfirmedUsers.FirstOrDefault(x => x.Email == loginViewModel.Email && x.Password == password);
+        
             
             if (User == null)
             {

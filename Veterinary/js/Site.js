@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
 
-  //  $('#datePickerField').datepicker();
+  
 
 
 
@@ -25,13 +25,14 @@
         });
     });
 
-
+  $('#datePickerField').datepicker();
 
     $('#LoginBtn').click(function (e) {
         e.preventDefault()
 
         var email = $('#LoginEmail').val();
         var password = $('#LoginPassword').val();
+        
         $.ajax({
             url: '/Account/Login',
             method: 'post',
