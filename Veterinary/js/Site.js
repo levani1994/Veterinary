@@ -3,9 +3,12 @@
     $('#datePickerField').datepicker();
 
 
+
     $('.list-group-item').click(function () {
         var id = $(this).attr('data-ID');
     });
+
+
 
     $('#PriceBtn').click(function () {
 
@@ -21,6 +24,8 @@
             }
         });
     });
+
+
 
     $('#LoginBtn').click(function (e) {
         e.preventDefault()
@@ -44,5 +49,4 @@
             },
         });
     })
-
 })
