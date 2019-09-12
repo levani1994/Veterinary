@@ -21,7 +21,7 @@ namespace Veterinary.Controllers
 
             Session.Clear();
             System.Web.HttpContext.Current.Session.RemoveAll();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Home");
         }
 
 
