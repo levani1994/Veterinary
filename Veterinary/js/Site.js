@@ -27,27 +27,27 @@
 
   $('#datePickerField').datepicker();
 
-    $('#LoginBtn').click(function (e) {
-        e.preventDefault()
+    //$('#LoginBtn').click(function (e) {
+    //    e.preventDefault()
 
-        var email = $('#LoginEmail').val();
-        var password = $('#LoginPassword').val();
+    //    var email = $('#LoginEmail').val();
+    //    var password = $('#LoginPassword').val();
         
-        $.ajax({
-            url: '/Account/Login',
-            method: 'post',
-            data: {
-                'Email': email, 'Password': password
+    //    $.ajax({
+    //        url: '/Account/Login',
+    //        method: 'post',
+    //        data: {
+    //            'Email': email, 'Password': password
 
-            },
-            success: function (response) {
-                console.log(response, 'response')
-                alert('success')
+    //        },
+    //        success: function (response) {
+    //            console.log(response, 'response')
+    //            alert('success')
 
-            },
-            error: function () {
-                alert('Login Failed')
-            },
-        });
-    })
+    //        },
+    //        error: function () {
+    //            alert('Login Failed')
+    //        },
+    //    });
+    //})
 })
