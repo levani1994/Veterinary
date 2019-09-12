@@ -3,18 +3,19 @@
     $('#datePickerField').datepicker();
 
 
+
     $('.list-group-item').click(function () {
         var id = $(this).attr('data-ID');
     });
 
+
+
     $('#PriceBtn').click(function () {
-        
-        var name = $('#TopicName').val();
-        var category = $('#TopicCategory').val();
-        console.log(name);
-        console.log(category);
+
+        var name = $('#ProductName').val();
+        var category = $('#secound').text();
         $.ajax({
-            url: '/Forum/Category',
+            url: 'Category',
             method: 'post',
             data: { 'TopicViewName': name, 'TopicViewCategory': category },
             success: function () {
@@ -24,7 +25,7 @@
         });
     });
 
-  
+
 
     $('#LoginBtn').click(function (e) {
         e.preventDefault()
@@ -48,5 +49,4 @@
             },
         });
     })
-
 })

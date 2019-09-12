@@ -44,8 +44,7 @@ namespace Veterinary.Controllers
 
             string password = Helper.ComputeSha256Hash(loginViewModel.Password + Helper.AuthKey);
             var User = db.ConfirmedUsers.FirstOrDefault(x => x.Email == loginViewModel.Email && x.Password == password);
-
-
+            
             if (User == null)
             {
                 ViewBag.error = "მსგავსი მონაცემებით მომხმარებელი ვერ მოიძებნა !";
@@ -108,7 +107,7 @@ namespace Veterinary.Controllers
 
               
                
-                // მაილზე კოდის გაგზავნა
+                // მაილზე კოდის გაგზავნა ლინკით კონფირმაცია
                 try
                 {
                     if (ModelState.IsValid)
@@ -138,15 +137,12 @@ namespace Veterinary.Controllers
                         return RedirectToAction("succes", new { email = NotConfirmedUser.Email });
                     }
                 }
-
-
                 catch (Exception)
                 {
                     ViewBag.Error = "Some Error";
                 }
                 return View();
             }
-
         }
 
         // ელ.ფოსტით დადასტურებულები
@@ -172,12 +168,5 @@ namespace Veterinary.Controllers
             db.SubmitChanges();
             return RedirectToAction("Index", "Home");
         }
-
-
-
-
-        
-
-
     }
 }

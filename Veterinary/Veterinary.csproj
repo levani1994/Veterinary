@@ -195,7 +195,7 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="css\style.css" />
-    <Content Include="css\Index.css" />
+    <Content Include="css\index.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\arlrdbd\arial_geo.svg" />
     <Content Include="fonts\MyriadPro-Regular\MyriadPro-Regular.svg" />
