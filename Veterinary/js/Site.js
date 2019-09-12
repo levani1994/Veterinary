@@ -40,9 +40,9 @@
                 'Email': email, 'Password': password
 
             },
-            success: function (response) {
+            success: function () {
                
-                alert('success')
+                location.reload(); 
 
             },
             error: function () {
