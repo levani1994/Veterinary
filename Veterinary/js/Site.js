@@ -8,11 +8,13 @@
     });
 
     $('#PriceBtn').click(function () {
-
-        var name = $('#ProductName').val();
-        var category = $('#secound').text();
+        
+        var name = $('#TopicName').val();
+        var category = $('#TopicCategory').val();
+        console.log(name);
+        console.log(category);
         $.ajax({
-            url: 'Category',
+            url: '/Forum/Category',
             method: 'post',
             data: { 'TopicViewName': name, 'TopicViewCategory': category },
             success: function () {
@@ -21,6 +23,8 @@
             }
         });
     });
+
+  
 
     $('#LoginBtn').click(function (e) {
         e.preventDefault()
