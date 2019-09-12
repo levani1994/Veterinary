@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
 
-    $('#datePickerField').datepicker();
+  //  $('#datePickerField').datepicker();
 
 
 
@@ -12,15 +12,15 @@
 
     $('#PriceBtn').click(function () {
 
-        var name = $('#ProductName').val();
-        var category = $('#secound').text();
+        var name = $('#TopicName').val();
+        var category = $('#TopicCategory').val();
         $.ajax({
             url: 'Category',
             method: 'post',
             data: { 'TopicViewName': name, 'TopicViewCategory': category },
             success: function () {
                 $('#CloseBtn').trigger('click');
-                $('#ProductName').val('');
+              
             }
         });
     });
