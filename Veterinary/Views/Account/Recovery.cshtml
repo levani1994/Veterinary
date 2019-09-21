@@ -1,37 +1,18 @@
 ﻿
 
 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-<form id="recovery-form" method="post" style="display:none;">
+<form action="/Account/Recovery" id="recovery-form" method="post" style="display:none;">
 
     <div class="form__group">
-        <label>ელ.ფოსტა</label>
+        <label>შეიყვანეთ ელ.ფოსტა</label>
         @*@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger", @style = "color:red" })*@
-        <input id="LoginEmail" name="Email" type="email" class="form__control">
+        <input id="RecoveryEmail" name="Email" type="email" class="form__control">
     </div>
-
-    <div class="form__group">
-        <label>პაროლი</label>
-        @*@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger", @style = "color:red" })*@
-        <input id="LoginPassword" name="Password" type="password" class="form__control">
-    </div>
-
+   
     <div class="btns">
-        <button id="LoginBtn" class="btn btn__yellow" type="submit">შესვლა</button>
-        <div class="btn btn__yellow" id="show-register-form">რეგისტრაცია</div>
-
+        <button type="submit" class="btn btn__yellow">პაროლის აღდგენა</button>
+        <div class="btn btn__yellow" id="show-login_form">გაუქმება</div>
+        
     </div>
-
-    <div class="auth">
-        <span>ავტორიზაცია სოციალური ქსელით</span> <img src="~/images/icons/auth.png" alt="auth">
-
-    </div>
-
-    <div class="btns">
-
-        <div class="btn btn__yellow" id="show-recovery-form">პაროლის აღდგენა</div>
-
-    </div>
-    <div>
-        fwefwe
-    </div>
+ 
 </form>

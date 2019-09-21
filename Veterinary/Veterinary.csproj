@@ -141,6 +141,7 @@
     </Compile>
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\RecoveryViewModel.cs" />
     <Compile Include="Models\RegistrationViewModel.cs" />
     <Compile Include="Models\TopicViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -76,14 +76,27 @@ $(document).ready(function () {
     });
 
     $('#show-login-form').click(function () {
-        $('#login-form').show()
+      
         $('#registration-form').hide()
+        $('#login-form').show()
     });
 
     $('#show-recovery-form').click(function () {
         $('#login-form').hide()
         $('#recovery-form').show()
+       
+        
     });
+
+
+    $('#show-login_form').click(function () {
+       
+        $('#recovery-form').hide()
+        $('#login-form').show()
+    });
+
+   
+   
 
 
 });

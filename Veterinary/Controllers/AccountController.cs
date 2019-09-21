@@ -30,11 +30,59 @@ namespace Veterinary.Controllers
             return View();
         }
 
+
         public ActionResult Recovery()
         {
             return View();
         }
 
+
+        public ActionResult Recovery(RecoveryViewModel recoveryViewModel)
+        {
+
+            var rec = db.ConfirmedUsers.FirstOrDefault(x => x.Email == recoveryViewModel.EmailToBeRecover);
+
+            if (rec == null)
+            {
+                ViewBag.error = "ამ ე.ლ ფოსტით დარეგისტრირებული მომხმარებელი არ იძებნება";
+                return View();
+            }
+            else
+            {
+                   
+                    var senderEmail = new MailAddress("levani.jalaghonia09@geolab.edu.ge", "veterinar");
+                    var receiverEmail = new MailAddress(recoveryViewModel.EmailToBeRecover, "Receiver");
+                    var password = "eleanoragt";
+                    var sub = "ელ.ფოსტის დადასტურება";
+                    var body = "დაადასტურეთ თქვენი ელ.ფოსტა მოცემულ ლინკზე გადასვლით: http://localhost:54637/Account/PasswordChange/" + recoveryViewModel.EmailToBeRecover; // view რო გვექნება მერე გავტესტავ, წესით უდნა იმუშაოს. შენ რომ გაუშვებ localHost შეცვალე
+                    var smtp = new SmtpClient
+                    {
+                        Host = "smtp.gmail.com",
+                        Port = 587,
+                        EnableSsl = true,
+                        DeliveryMethod = SmtpDeliveryMethod.Network,
+                        UseDefaultCredentials = false,
+                        Credentials = new NetworkCredential(senderEmail.Address, password)
+                    };
+                    using (var mess = new MailMessage(senderEmail, receiverEmail)
+                    {
+                        Subject = sub,
+                        Body = body
+                    })
+                    {
+                        smtp.Send(mess);
+                    }
+                    return RedirectToAction("Succes");
+                
+                
+
+                
+
+
+            }
+
+
+        }
 
 
         //  შესვლა
@@ -140,7 +188,7 @@ namespace Veterinary.Controllers
                         {
                             smtp.Send(mess);
                         }
-                        return RedirectToAction("succes", new { email = NotConfirmedUser.Email });
+                        return RedirectToAction("Succes", new { email = NotConfirmedUser.Email });
                     }
                 }
                 catch (Exception)
@@ -153,7 +201,7 @@ namespace Veterinary.Controllers
 
         // ელ.ფოსტით დადასტურებულები
         public ActionResult Confirmation(string id)           //ეს რავი თუ გინდა შენებურად გადააკეთე 
-        {
+        {        
             var notConfirmed = db.NotConfirmedUsers.FirstOrDefault(x => x.ConfirmationCode == id);
 
             db.ConfirmedUsers.InsertOnSubmit(
