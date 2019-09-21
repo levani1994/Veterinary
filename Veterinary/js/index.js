@@ -80,6 +80,11 @@ $(document).ready(function () {
         $('#registration-form').hide()
     });
 
+    $('#show-recovery-form').click(function () {
+        $('#login-form').hide()
+        $('#recovery-form').show()
+    });
+
 
 });
 

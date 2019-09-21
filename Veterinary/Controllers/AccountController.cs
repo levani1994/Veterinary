@@ -30,6 +30,11 @@ namespace Veterinary.Controllers
             return View();
         }
 
+        public ActionResult Recovery()
+        {
+            return View();
+        }
+
 
 
         //  შესვლა
