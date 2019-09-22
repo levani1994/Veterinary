@@ -1,0 +1,65 @@
+﻿@model Veterinary.Models.RecoveryViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Geoton Project</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/index.css">
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script>
+        var Path = "@Url.Content("~/")";
+    </script>
+</head>
+<body>
+
+
+    <!-- header -->
+    <header class="header">
+
+        <div class="header__container flex justify-center">
+            <div class="header__logo">
+                <a href="/Home/Index">
+                    <img src="~/images/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <div class="popup " id="recoveryPass">
+                <div class="popup__container">
+                    <div class="popup__top">
+                        <h4>პაროლის აღდგენა</h4>
+                    </div>
+                    <div class="popup__bottom">
+
+
+                        @RenderBody()
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/Scripts/jquery.datetimepicker.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/slick.min.js"></script>
+    <script src="~/js/index.js"></script>
+    <script src="~/js/site.js"></script>
+</body>
+</html>

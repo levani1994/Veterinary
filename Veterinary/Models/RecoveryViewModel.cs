@@ -10,5 +10,6 @@ namespace Veterinary.Models
     {
         public string EmailToBeRecover { get; set; }
         public string NewPassword { get; set; }
+        public string RepeatPassword { get; set; }
     }
 }

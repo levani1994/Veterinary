@@ -96,7 +96,9 @@ $(document).ready(function () {
     });
 
    
-   
+    $(window).load(function () {
+        $('#recoveryPass').addClass('active')
+    });
 
 
 });
