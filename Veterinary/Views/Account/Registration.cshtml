@@ -20,7 +20,7 @@
         @Html.ValidationMessageFor(model => model.birthdate, "", new { @class = "text-danger" })
         <label>დაბადების თარიღი</label>
         <input type="text" name="birthdate" class="form__control" id="datePickerField" autocomplete="off">
-            <img class="calendar__img" src="~/images/icons/calendar.svg" alt="calendar">
+        <img class="calendar__img" id="calendar" src="~/images/icons/calendar.svg" alt="calendar">
     </div>
 
     <div class="form__group">

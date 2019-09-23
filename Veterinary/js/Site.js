@@ -25,7 +25,20 @@
         });
     });
 
-  $('#datePickerField').datepicker();
+    $('#datePickerField').datepicker();
+    
+    //$("#calendar").datepicker({
+    //    showOn: "button",
+    //    buttonText: "Select date"
+    //});
+
+    $("#calendar").datepicker({
+        
+        showOn: "button",
+        buttonImage: "images/icons/calendar.svg",
+        buttonImageOnly: true,
+       
+    });
 
     $('#LoginBtn').click(function (e) {
         e.preventDefault()
