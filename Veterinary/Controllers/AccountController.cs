@@ -46,7 +46,7 @@ namespace Veterinary.Controllers
       
         public ActionResult PasswordChange(string id)
         {
-            ViewBag.email = id;
+            ViewBag.token = id;
             return View();
         }
 
@@ -63,12 +63,16 @@ namespace Veterinary.Controllers
             }
             else
             {
-                   
-                    var senderEmail = new MailAddress("levani.jalaghonia09@geolab.edu.ge", "veterinar");
+
+                var token = Guid.NewGuid().ToString();
+                rec.Token = token;
+                db.SubmitChanges();
+
+                var senderEmail = new MailAddress("levani.jalaghonia09@geolab.edu.ge", "veterinar");
                     var receiverEmail = new MailAddress(recoveryViewModel.EmailToBeRecover, "Receiver");
                     var password = "eleanoragt";
                     var sub = "ელ.ფოსტის დადასტურება";
-                var body = "დაადასტურეთ თქვენი ელ.ფოსტა მოცემულ ლინკზე გადასვლით: http://localhost:54637/Account/PasswordChange/" + recoveryViewModel.EmailToBeRecover; // view რო გვექნება მერე გავტესტავ, წესით უდნა იმუშაოს. შენ რომ გაუშვებ localHost შეცვალე
+                var body = "დაადასტურეთ თქვენი ელ.ფოსტა მოცემულ ლინკზე გადასვლით: http://localhost:54637/Account/PasswordChange/" + token; // view რო გვექნება მერე გავტესტავ, წესით უდნა იმუშაოს. შენ რომ გაუშვებ localHost შეცვალე
                     var smtp = new SmtpClient
                     {
                         Host = "smtp.gmail.com",
@@ -94,13 +98,18 @@ namespace Veterinary.Controllers
         public ActionResult PasswordChange(RecoveryViewModel recoveryViewModel)
         {
 
-            var password = db.ConfirmedUsers.FirstOrDefault(x => x.Email == recoveryViewModel.EmailToBeRecover);
-            if (recoveryViewModel.NewPassword == recoveryViewModel.RepeatPassword)
+            var email = db.ConfirmedUsers.FirstOrDefault(x => x.Token == recoveryViewModel.Token);
+            if (email==null)
             {
-                password.Password = Helper.ComputeSha256Hash(recoveryViewModel.NewPassword + Helper.AuthKey);
-
+                return View();
+            }
+           else if (recoveryViewModel.NewPassword == recoveryViewModel.RepeatPassword)
+            {
+                email.Password = Helper.ComputeSha256Hash(recoveryViewModel.NewPassword + Helper.AuthKey);
+                email.Token = null;
                 db.SubmitChanges();
-                return RedirectToAction("RecoverSucces");
+              
+                return RedirectToAction("Success");
             }
             ViewBag.error = "პაროლები არ ემთხვევა";
             return View();

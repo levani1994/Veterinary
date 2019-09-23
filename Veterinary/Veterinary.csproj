@@ -134,6 +134,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CategoryViewModel.cs" />
+    <Compile Include="Models\DataBase.cs">
+      <DependentUpon>DataBase.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Models\DataBase.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

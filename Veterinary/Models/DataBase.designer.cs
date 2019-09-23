@@ -587,7 +587,7 @@ namespace Veterinary.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _Id;
+		private int _id;
 		
 		private string _Name;
 		
@@ -605,12 +605,14 @@ namespace Veterinary.Models
 		
 		private string _RequestIp;
 		
+		private string _Token;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
     partial void OnSurnameChanging(string value);
@@ -627,6 +629,8 @@ namespace Veterinary.Models
     partial void OnCreateDateChanged();
     partial void OnRequestIpChanging(string value);
     partial void OnRequestIpChanged();
+    partial void OnTokenChanging(string value);
+    partial void OnTokenChanged();
     #endregion
 		
 		public ConfirmedUser()
@@ -634,22 +638,22 @@ namespace Veterinary.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
 		{
 			get
 			{
-				return this._Id;
+				return this._id;
 			}
 			set
 			{
-				if ((this._Id != value))
+				if ((this._id != value))
 				{
-					this.OnIdChanging(value);
+					this.OnidChanging(value);
 					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -754,7 +758,7 @@ namespace Veterinary.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
 		public string Password
 		{
 			get
@@ -810,6 +814,26 @@ namespace Veterinary.Models
 					this._RequestIp = value;
 					this.SendPropertyChanged("RequestIp");
 					this.OnRequestIpChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Token", DbType="NVarChar(50)")]
+		public string Token
+		{
+			get
+			{
+				return this._Token;
+			}
+			set
+			{
+				if ((this._Token != value))
+				{
+					this.OnTokenChanging(value);
+					this.SendPropertyChanging();
+					this._Token = value;
+					this.SendPropertyChanged("Token");
+					this.OnTokenChanged();
 				}
 			}
 		}

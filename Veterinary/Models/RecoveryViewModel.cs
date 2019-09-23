@@ -8,6 +8,7 @@ namespace Veterinary.Models
     public class RecoveryViewModel
 
     {
+        public string Token { get; set; }
         public string EmailToBeRecover { get; set; }
         public string NewPassword { get; set; }
         public string RepeatPassword { get; set; }
