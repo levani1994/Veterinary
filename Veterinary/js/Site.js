@@ -24,6 +24,7 @@
             }
         });
     });
+<<<<<<< HEAD
 
     $('#datePickerField').datepicker();
     
@@ -39,6 +40,10 @@
         buttonImageOnly: true,
        
     });
+=======
+    
+  $('#datePickerField').datepicker();
+>>>>>>> bb3e7c8b40a17fe64091933332c8d75574bc0b72
 
     $('#LoginBtn').click(function (e) {
         e.preventDefault()
@@ -54,9 +59,10 @@
 
             },
             success: function () {
-               
-                location.reload(); 
-
+                
+                location.reload();
+                //$('#login-logout').html();
+                
             },
             error: function () {
                 alert('Login Failed')

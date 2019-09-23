@@ -141,6 +141,7 @@
     </Compile>
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\RecoveryViewModel.cs" />
     <Compile Include="Models\RegistrationViewModel.cs" />
     <Compile Include="Models\TopicViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -303,6 +304,9 @@
     <Content Include="Views\Home\Food.cshtml" />
     <Content Include="Views\Shared\_ForumLayout.cshtml" />
     <Content Include="Views\Account\Success.cshtml" />
+    <Content Include="Views\Account\Recovery.cshtml" />
+    <Content Include="Views\Shared\_RecoveryLayout.cshtml" />
+    <Content Include="Views\Account\PasswordChange.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

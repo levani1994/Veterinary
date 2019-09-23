@@ -1,0 +1,18 @@
+﻿
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<form action="/Account/Recovery" id="recovery-form" method="post" style="display:none;">
+
+    <div class="form__group">
+        <label>შეიყვანეთ ელ.ფოსტა</label>
+        @*@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger", @style = "color:red" })*@
+        <input id="RecoveryEmail" name="EmailToBeRecover" type="email" class="form__control">
+    </div>
+   
+    <div class="btns">
+        <button type="submit" class="btn btn__yellow">პაროლის აღდგენა</button>
+        <div class="btn btn__yellow" id="show-login_form">გაუქმება</div>
+        
+    </div>
+ 
+</form>

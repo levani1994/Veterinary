@@ -40,14 +40,44 @@
                     <input class="form__control" type="text" placeholder="ძიება...">
                     <img class="search__img" src="~/images/icons/search.png" alt="search">
                 </div>
+                
 
-                <div class="login open__popup" data-popup="login">
-                    <img src="~/images/icons/fb.png" alt="fb">
-                    @ViewBag.name
-                    შესვლა
+
+               
+
+                <div>
+                   
+
+                    @if (Session["user"] == null)
+                    {
+
+                    
+
+                        <div id="login-logout" class="login open__popup" data-popup="login">
+                            <p></p>
+                            <a href="/Account/Login">შესვლა </a>
+                            @*<img src="~/images/icons/fb.png" alt="fb">*@
+                        </div>
+                       
+
+                 
+
+                    }
+                    else
+                    {
+
+                        <div>
+                            <p style="color:red">@ViewBag.name</p> 
+                            <a href="/Account/Logout">გასვლა </a>
+
+                        </div>
+                    }
+
                 </div>
-            </div>
+
+
         </div>
+            </div>
     </header>
 
     <div class="popup login__popup popup-close" data-popup="login">
@@ -58,9 +88,12 @@
 
             <div class="popup__bottom">
 
+
                 @Html.Partial("~/Views/Account/Login.cshtml")
 
                 @Html.Partial("~/Views/Account/Registration.cshtml")
+
+                @Html.Partial("~/Views/Account/Recovery.cshtml")
             </div>
         </div>
     </div>
