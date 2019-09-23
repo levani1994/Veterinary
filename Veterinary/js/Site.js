@@ -24,8 +24,26 @@
             }
         });
     });
+<<<<<<< HEAD
+
+    $('#datePickerField').datepicker();
+    
+    //$("#calendar").datepicker({
+    //    showOn: "button",
+    //    buttonText: "Select date"
+    //});
+
+    $("#calendar").datepicker({
+        
+        showOn: "button",
+        buttonImage: "images/icons/calendar.svg",
+        buttonImageOnly: true,
+       
+    });
+=======
     
   $('#datePickerField').datepicker();
+>>>>>>> bb3e7c8b40a17fe64091933332c8d75574bc0b72
 
     $('#LoginBtn').click(function (e) {
         e.preventDefault()
