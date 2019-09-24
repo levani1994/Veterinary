@@ -8,11 +8,11 @@ namespace Veterinary.Controllers
 {
     public class HomeController : BaseController
     {
-        
-        //public JsonResult Search(string search)
-        //{
-        //    return Json(db.);
-        //}
+
+        public JsonResult Search(string searchTerm)
+        {
+            return Json(db.Foods.Where(x => x.Name.Contains(searchTerm)),JsonRequestBehavior.AllowGet);
+        }
 
 
         public ActionResult Index()

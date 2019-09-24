@@ -1,9 +1,18 @@
 ﻿$(document).ready(function () {
 
 
-    $('#search').keyup(function () {
-        var i = $(this).val();
-        console.log(i);
+    $('#searchTerm').keyup(function () {
+        var term = $(this).val();
+        $.ajax({
+            url: '/Home/Search',
+            method: 'post',
+            data: {
+                'searchTerm': term
+            },
+            success: function (response) {
+                console.log(response)
+            }
+        })
     });
 
 
