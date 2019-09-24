@@ -26,7 +26,9 @@ namespace Veterinary.Controllers
         
         
         public ActionResult Food()
+
         {
+            ViewBag.name = Session["user"];
             return View();
         }
   
