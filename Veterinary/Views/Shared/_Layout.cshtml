@@ -40,44 +40,30 @@
                     <input class="form__control" type="text" placeholder="ძიება...">
                     <img class="search__img" src="~/images/icons/search.png" alt="search">
                 </div>
-                
 
-
-               
 
                 <div>
-                   
-
                     @if (Session["user"] == null)
                     {
-
-                    
-
                         <div id="login-logout" class="login open__popup" data-popup="login">
                             <p></p>
                             <a href="/Account/Login">შესვლა </a>
                             @*<img src="~/images/icons/fb.png" alt="fb">*@
                         </div>
-                       
-
-                 
-
                     }
                     else
                     {
-
                         <div>
-                            <p style="color:red">@ViewBag.name</p> 
+                            <p style="color:red">@ViewBag.name</p>
                             <a href="/Account/Logout">გასვლა </a>
 
                         </div>
                     }
-
                 </div>
 
 
-        </div>
             </div>
+        </div>
     </header>
 
     <div class="popup login__popup popup-close" data-popup="login">
@@ -112,8 +98,8 @@
         </ul>
     </footer>
 
-    
-    
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="~/Scripts/jquery.datetimepicker.js"></script>
