@@ -133,6 +133,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\LanguageConverter.cs" />
     <Compile Include="Models\CategoryViewModel.cs" />
     <Compile Include="Models\DataBase.cs">
       <DependentUpon>DataBase.dbml</DependentUpon>
