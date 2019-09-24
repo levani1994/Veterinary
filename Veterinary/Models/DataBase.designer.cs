@@ -42,6 +42,12 @@ namespace Veterinary.Models
     partial void InsertConfirmedUser(ConfirmedUser instance);
     partial void UpdateConfirmedUser(ConfirmedUser instance);
     partial void DeleteConfirmedUser(ConfirmedUser instance);
+    partial void InsertFood(Food instance);
+    partial void UpdateFood(Food instance);
+    partial void DeleteFood(Food instance);
+    partial void InsertCare(Care instance);
+    partial void UpdateCare(Care instance);
+    partial void DeleteCare(Care instance);
     #endregion
 		
 		public DataBaseDataContext() : 
@@ -103,6 +109,22 @@ namespace Veterinary.Models
 			get
 			{
 				return this.GetTable<ConfirmedUser>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Food> Foods
+		{
+			get
+			{
+				return this.GetTable<Food>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Care> Cares
+		{
+			get
+			{
+				return this.GetTable<Care>();
 			}
 		}
 	}
@@ -834,6 +856,562 @@ namespace Veterinary.Models
 					this._Token = value;
 					this.SendPropertyChanged("Token");
 					this.OnTokenChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Food")]
+	public partial class Food : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _PedigreeAdult;
+		
+		private string _Achiever;
+		
+		private string _Bella;
+		
+		private string _Tesco;
+		
+		private string _Puppy_Chow;
+		
+		private string _Solid_Gold;
+		
+		private string _Carna4;
+		
+		private string _PedigreeBig;
+		
+		private string _PedigreeSmall;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnPedigreeAdultChanging(string value);
+    partial void OnPedigreeAdultChanged();
+    partial void OnAchieverChanging(string value);
+    partial void OnAchieverChanged();
+    partial void OnBellaChanging(string value);
+    partial void OnBellaChanged();
+    partial void OnTescoChanging(string value);
+    partial void OnTescoChanged();
+    partial void OnPuppy_ChowChanging(string value);
+    partial void OnPuppy_ChowChanged();
+    partial void OnSolid_GoldChanging(string value);
+    partial void OnSolid_GoldChanged();
+    partial void OnCarna4Changing(string value);
+    partial void OnCarna4Changed();
+    partial void OnPedigreeBigChanging(string value);
+    partial void OnPedigreeBigChanged();
+    partial void OnPedigreeSmallChanging(string value);
+    partial void OnPedigreeSmallChanged();
+    #endregion
+		
+		public Food()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedigreeAdult", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string PedigreeAdult
+		{
+			get
+			{
+				return this._PedigreeAdult;
+			}
+			set
+			{
+				if ((this._PedigreeAdult != value))
+				{
+					this.OnPedigreeAdultChanging(value);
+					this.SendPropertyChanging();
+					this._PedigreeAdult = value;
+					this.SendPropertyChanged("PedigreeAdult");
+					this.OnPedigreeAdultChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Achiever", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string Achiever
+		{
+			get
+			{
+				return this._Achiever;
+			}
+			set
+			{
+				if ((this._Achiever != value))
+				{
+					this.OnAchieverChanging(value);
+					this.SendPropertyChanging();
+					this._Achiever = value;
+					this.SendPropertyChanged("Achiever");
+					this.OnAchieverChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Bella", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string Bella
+		{
+			get
+			{
+				return this._Bella;
+			}
+			set
+			{
+				if ((this._Bella != value))
+				{
+					this.OnBellaChanging(value);
+					this.SendPropertyChanging();
+					this._Bella = value;
+					this.SendPropertyChanged("Bella");
+					this.OnBellaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tesco", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string Tesco
+		{
+			get
+			{
+				return this._Tesco;
+			}
+			set
+			{
+				if ((this._Tesco != value))
+				{
+					this.OnTescoChanging(value);
+					this.SendPropertyChanging();
+					this._Tesco = value;
+					this.SendPropertyChanged("Tesco");
+					this.OnTescoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Puppy Chow]", Storage="_Puppy_Chow", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string Puppy_Chow
+		{
+			get
+			{
+				return this._Puppy_Chow;
+			}
+			set
+			{
+				if ((this._Puppy_Chow != value))
+				{
+					this.OnPuppy_ChowChanging(value);
+					this.SendPropertyChanging();
+					this._Puppy_Chow = value;
+					this.SendPropertyChanged("Puppy_Chow");
+					this.OnPuppy_ChowChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Solid Gold]", Storage="_Solid_Gold", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string Solid_Gold
+		{
+			get
+			{
+				return this._Solid_Gold;
+			}
+			set
+			{
+				if ((this._Solid_Gold != value))
+				{
+					this.OnSolid_GoldChanging(value);
+					this.SendPropertyChanging();
+					this._Solid_Gold = value;
+					this.SendPropertyChanged("Solid_Gold");
+					this.OnSolid_GoldChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Carna4", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string Carna4
+		{
+			get
+			{
+				return this._Carna4;
+			}
+			set
+			{
+				if ((this._Carna4 != value))
+				{
+					this.OnCarna4Changing(value);
+					this.SendPropertyChanging();
+					this._Carna4 = value;
+					this.SendPropertyChanged("Carna4");
+					this.OnCarna4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedigreeBig", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string PedigreeBig
+		{
+			get
+			{
+				return this._PedigreeBig;
+			}
+			set
+			{
+				if ((this._PedigreeBig != value))
+				{
+					this.OnPedigreeBigChanging(value);
+					this.SendPropertyChanging();
+					this._PedigreeBig = value;
+					this.SendPropertyChanged("PedigreeBig");
+					this.OnPedigreeBigChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedigreeSmall", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string PedigreeSmall
+		{
+			get
+			{
+				return this._PedigreeSmall;
+			}
+			set
+			{
+				if ((this._PedigreeSmall != value))
+				{
+					this.OnPedigreeSmallChanging(value);
+					this.SendPropertyChanging();
+					this._PedigreeSmall = value;
+					this.SendPropertyChanged("PedigreeSmall");
+					this.OnPedigreeSmallChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Care")]
+	public partial class Care : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _juxzh_Truelove;
+		
+		private string _Basics_Dog_Leashe;
+		
+		private string _pet_and_cuddle;
+		
+		private string _BWOGUE_Seat_Belts;
+		
+		private string _Pet_Gear_Carrier;
+		
+		private string _WIGZI_Dual;
+		
+		private string _LOVESAKI_Car_Seat;
+		
+		private string _Dog_Training_Collar;
+		
+		private string _GoTags;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onjuxzh_TrueloveChanging(string value);
+    partial void Onjuxzh_TrueloveChanged();
+    partial void OnBasics_Dog_LeasheChanging(string value);
+    partial void OnBasics_Dog_LeasheChanged();
+    partial void Onpet_and_cuddleChanging(string value);
+    partial void Onpet_and_cuddleChanged();
+    partial void OnBWOGUE_Seat_BeltsChanging(string value);
+    partial void OnBWOGUE_Seat_BeltsChanged();
+    partial void OnPet_Gear_CarrierChanging(string value);
+    partial void OnPet_Gear_CarrierChanged();
+    partial void OnWIGZI_DualChanging(string value);
+    partial void OnWIGZI_DualChanged();
+    partial void OnLOVESAKI_Car_SeatChanging(string value);
+    partial void OnLOVESAKI_Car_SeatChanged();
+    partial void OnDog_Training_CollarChanging(string value);
+    partial void OnDog_Training_CollarChanged();
+    partial void OnGoTagsChanging(string value);
+    partial void OnGoTagsChanged();
+    #endregion
+		
+		public Care()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[juxzh Truelove]", Storage="_juxzh_Truelove", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string juxzh_Truelove
+		{
+			get
+			{
+				return this._juxzh_Truelove;
+			}
+			set
+			{
+				if ((this._juxzh_Truelove != value))
+				{
+					this.Onjuxzh_TrueloveChanging(value);
+					this.SendPropertyChanging();
+					this._juxzh_Truelove = value;
+					this.SendPropertyChanged("juxzh_Truelove");
+					this.Onjuxzh_TrueloveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Basics Dog Leashe]", Storage="_Basics_Dog_Leashe", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Basics_Dog_Leashe
+		{
+			get
+			{
+				return this._Basics_Dog_Leashe;
+			}
+			set
+			{
+				if ((this._Basics_Dog_Leashe != value))
+				{
+					this.OnBasics_Dog_LeasheChanging(value);
+					this.SendPropertyChanging();
+					this._Basics_Dog_Leashe = value;
+					this.SendPropertyChanged("Basics_Dog_Leashe");
+					this.OnBasics_Dog_LeasheChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[pet and cuddle]", Storage="_pet_and_cuddle", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string pet_and_cuddle
+		{
+			get
+			{
+				return this._pet_and_cuddle;
+			}
+			set
+			{
+				if ((this._pet_and_cuddle != value))
+				{
+					this.Onpet_and_cuddleChanging(value);
+					this.SendPropertyChanging();
+					this._pet_and_cuddle = value;
+					this.SendPropertyChanged("pet_and_cuddle");
+					this.Onpet_and_cuddleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[BWOGUE Seat Belts]", Storage="_BWOGUE_Seat_Belts", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string BWOGUE_Seat_Belts
+		{
+			get
+			{
+				return this._BWOGUE_Seat_Belts;
+			}
+			set
+			{
+				if ((this._BWOGUE_Seat_Belts != value))
+				{
+					this.OnBWOGUE_Seat_BeltsChanging(value);
+					this.SendPropertyChanging();
+					this._BWOGUE_Seat_Belts = value;
+					this.SendPropertyChanged("BWOGUE_Seat_Belts");
+					this.OnBWOGUE_Seat_BeltsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Pet Gear Carrier]", Storage="_Pet_Gear_Carrier", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Pet_Gear_Carrier
+		{
+			get
+			{
+				return this._Pet_Gear_Carrier;
+			}
+			set
+			{
+				if ((this._Pet_Gear_Carrier != value))
+				{
+					this.OnPet_Gear_CarrierChanging(value);
+					this.SendPropertyChanging();
+					this._Pet_Gear_Carrier = value;
+					this.SendPropertyChanged("Pet_Gear_Carrier");
+					this.OnPet_Gear_CarrierChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[WIGZI Dual]", Storage="_WIGZI_Dual", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string WIGZI_Dual
+		{
+			get
+			{
+				return this._WIGZI_Dual;
+			}
+			set
+			{
+				if ((this._WIGZI_Dual != value))
+				{
+					this.OnWIGZI_DualChanging(value);
+					this.SendPropertyChanging();
+					this._WIGZI_Dual = value;
+					this.SendPropertyChanged("WIGZI_Dual");
+					this.OnWIGZI_DualChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[LOVESAKI Car Seat]", Storage="_LOVESAKI_Car_Seat", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string LOVESAKI_Car_Seat
+		{
+			get
+			{
+				return this._LOVESAKI_Car_Seat;
+			}
+			set
+			{
+				if ((this._LOVESAKI_Car_Seat != value))
+				{
+					this.OnLOVESAKI_Car_SeatChanging(value);
+					this.SendPropertyChanging();
+					this._LOVESAKI_Car_Seat = value;
+					this.SendPropertyChanged("LOVESAKI_Car_Seat");
+					this.OnLOVESAKI_Car_SeatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Dog Training Collar]", Storage="_Dog_Training_Collar", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Dog_Training_Collar
+		{
+			get
+			{
+				return this._Dog_Training_Collar;
+			}
+			set
+			{
+				if ((this._Dog_Training_Collar != value))
+				{
+					this.OnDog_Training_CollarChanging(value);
+					this.SendPropertyChanging();
+					this._Dog_Training_Collar = value;
+					this.SendPropertyChanged("Dog_Training_Collar");
+					this.OnDog_Training_CollarChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GoTags", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string GoTags
+		{
+			get
+			{
+				return this._GoTags;
+			}
+			set
+			{
+				if ((this._GoTags != value))
+				{
+					this.OnGoTagsChanging(value);
+					this.SendPropertyChanging();
+					this._GoTags = value;
+					this.SendPropertyChanged("GoTags");
+					this.OnGoTagsChanged();
 				}
 			}
 		}

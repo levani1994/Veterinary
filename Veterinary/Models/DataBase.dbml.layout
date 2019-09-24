@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataBase">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10" name="DataBase">
   <DataContextMoniker Name="/DataBaseDataContext" />
   <nestedChildShapes>
     <classShape Id="0c2b7bad-12fb-4c95-bfac-9dd2515e73f3" absoluteBounds="2.125, 2, 2, 1.1939925130208333">
@@ -24,6 +24,18 @@
       <DataClassMoniker Name="/DataBaseDataContext/ConfirmedUser" />
       <nestedChildShapes>
         <elementListCompartment Id="ef050f36-5323-4f68-9a74-d0efd114fc9e" absoluteBounds="5.39, 4.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a176ebe-3872-4dca-9e59-163bb6944043" absoluteBounds="5.25, 7, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataBaseDataContext/Food" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b614f6a-deca-4b85-8f3e-18ec8f8df251" absoluteBounds="5.2650000000000006, 7.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b856fc1a-7b96-4734-acd3-6aaa42062618" absoluteBounds="2.125, 7, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataBaseDataContext/Care" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3503e531-43a2-4ebf-806c-c0119a7569e1" absoluteBounds="2.14, 7.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
