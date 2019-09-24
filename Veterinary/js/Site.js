@@ -1,7 +1,10 @@
 ﻿$(document).ready(function () {
 
-  
 
+    $('#search').keyup(function () {
+        var i = $(this).val();
+        console.log(i);
+    });
 
 
     $('.list-group-item').click(function () {
