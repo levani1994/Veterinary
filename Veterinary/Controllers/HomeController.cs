@@ -9,10 +9,10 @@ namespace Veterinary.Controllers
     public class HomeController : BaseController
     {
         
-        public JsonResult Search(string search)
-        {
-            return Json(db.)
-        }
+        //public JsonResult Search(string search)
+        //{
+        //    return Json(db.);
+        //}
 
 
         public ActionResult Index()
