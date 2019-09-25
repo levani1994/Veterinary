@@ -16,6 +16,13 @@ namespace Veterinary.Controllers
             return View(db.Categories);
         }
 
+
+        public ActionResult Topic(string id)
+        {
+            ViewBag.topic = id;
+            return View();
+        }
+
         public ActionResult Category(string id)
         {
             ViewBag.name = id;
