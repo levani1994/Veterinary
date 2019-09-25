@@ -19,7 +19,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -143,6 +144,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataBase.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\FacebookLoginModel.cs" />
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\RecoveryViewModel.cs" />
@@ -250,6 +252,7 @@
     <Content Include="images\user4.png" />
     <Content Include="images\user5.png" />
     <Content Include="images\WIGZI Dual.jpg" />
+    <Content Include="js\Facebook.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jquery-3.4.1.min.js" />
     <Content Include="js\site.js" />
@@ -330,6 +333,7 @@
     <Content Include="Views\Shared\_RecoveryLayout.cshtml" />
     <Content Include="Views\Account\PasswordChange.cshtml" />
     <Content Include="Views\Forum\Topic.cshtml" />
+    <Content Include="Views\Home\Interesting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -14,7 +14,6 @@ namespace Veterinary.Controllers
         {
             return RedirectToAction("Login");
         }
-      
 
         public ActionResult LogOut()
         {
@@ -28,22 +27,17 @@ namespace Veterinary.Controllers
         {
             return View();
         }
-
-
+        
         public ActionResult Registration()
         {
             return View();
         }
-
 
         public ActionResult Recovery()
         {
             return View();
         }
 
-
-       
-      
         public ActionResult PasswordChange(string id)
         {
             ViewBag.token = id;
@@ -115,7 +109,6 @@ namespace Veterinary.Controllers
             return View();
         }
 
-
         //  შესვლა
         [HttpPost]
         public ActionResult Login(LoginViewModel loginViewModel)
@@ -143,10 +136,7 @@ namespace Veterinary.Controllers
             }
         }
 
-
-
         // რეგისტრაცია
-        
         [HttpPost]
         public ActionResult Registration(RegistrationViewModel registrationViewModel)
         {
