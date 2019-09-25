@@ -120,7 +120,7 @@ namespace Veterinary.Controllers
         [HttpPost]
         public ActionResult Login(LoginViewModel loginViewModel)
         {
-            if (string.IsNullOrEmpty(loginViewModel.Email) || string.IsNullOrEmpty(loginViewModel.Password))
+            if (!ModelState.IsValid)
             {
                 ViewBag.Error = "შეავსეთ გამოტოვებული ველები !";
                 return View();
@@ -150,16 +150,12 @@ namespace Veterinary.Controllers
         [HttpPost]
         public ActionResult Registration(RegistrationViewModel registrationViewModel)
         {
-            if (String.IsNullOrEmpty(registrationViewModel.name) || String.IsNullOrEmpty(registrationViewModel.surName) || String.IsNullOrEmpty(registrationViewModel.mail) || String.IsNullOrEmpty(registrationViewModel.birthdate) || String.IsNullOrEmpty(registrationViewModel.dog_breed) || String.IsNullOrEmpty(registrationViewModel.password) || String.IsNullOrEmpty(registrationViewModel.repeatPassword))
+           
+            if (!ModelState.IsValid)
             {
-                ViewBag.error = "საჭიროა ყველა ველის შევსება";
-                return View();
+                return RedirectToAction("Index", "Home");
             }
 
-            else if (!ModelState.IsValid)
-            {
-                return View(registrationViewModel);
-            }
 
             else if (db.ConfirmedUsers.Where(x => x.Email == registrationViewModel.mail).Count() > 0) //ეს კაი როჯაა
             {

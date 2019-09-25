@@ -18,7 +18,7 @@ openPopup.forEach(function(click){
 var popups = document.querySelectorAll('.popup-close');
 popups.forEach(function(popup){
     document.addEventListener('keydown', function(e){
-        if (e.keyCode == 27 || e.which == 27) {
+        if (e.keyCode === 27 || e.which === 27) {
             popup.classList.remove('active');
         }
     });
@@ -45,13 +45,13 @@ closePopup.forEach(function(close){
 
 
 // close popups by document click
-document.addEventListener('click', function(e){
-    document.querySelectorAll('.popup-close').forEach(function(pop){
-        if(pop.classList.contains('active')){
-            pop.classList.remove('active');
-        } 
-    });
-});
+//document.addEventListener('click', function(e){
+//    document.querySelectorAll('.popup-close').forEach(function(pop){
+//        if(pop.classList.contains('active')){
+//            pop.classList.remove('active');
+//        } 
+//    });
+//});
 
 
 
@@ -73,6 +73,7 @@ $(document).ready(function () {
     $('#show-register-form').click(function () {
         $('#login-form').hide()
         $('#registration-form').show()
+       
     });
 
     $('#show-login-form').click(function () {
