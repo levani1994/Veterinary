@@ -13,12 +13,14 @@ namespace Veterinary.Controllers
        
         public ActionResult Index()
         {
+            
             return View(db.Categories);
         }
 
 
         public ActionResult Topic(string id)
         {
+            ViewBag.name = Session["user"];
             ViewBag.topic = id;
             return View();
         }

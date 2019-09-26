@@ -48,12 +48,7 @@
 
 
     <div class="my-3 p-3 bg-light rounded shadow-lg">
-        <h6 class="border-bottom border-gray pb-2 mb-0">
-            @ViewBag.name
-            <button type="button" style="margin-left:800px" class="btn btn-primary" id="add" data-toggle="modal" data-target="#exampleModal">
-                ახალი თემა
-
-            </button>
+        <h6 class="border-bottom border-gray pb-2 mb-0">@ViewBag.name<button type="button"  class="btn btn-primary" id="add" data-toggle="modal" data-target="#exampleModal">ახალი თემა</button>
         </h6>
     @foreach (var item in Model)
     {
