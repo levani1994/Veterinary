@@ -6,16 +6,10 @@
 
 
 
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li id="first" class="breadcrumb-item"><a href="~/Forum">Category</a></li>
-        <li id="first" class="breadcrumb-item"><a href="~/Forum">Category</a></li>
-        <li id="secound" class="breadcrumb-item ">@ViewBag.topic</li>
-    </ol>
-</nav>
 
 
-<h2>@ViewBag.topic</h2>
+
+
 <main class="pt-4">
 
 
@@ -35,34 +29,16 @@
                             <img src="https://secure.gravatar.com/avatar/62c9c125499e280d7f96a75e939f3046?s=96&amp;d=mm&amp;r=g" alt="" class="rounded-circle mr-2">
                             <strong><a href="https://mdbootstrap.com/profile/?id=35406" target="_blank">@ViewBag.name</a></strong>
 
-                            asked @ViewBag.topic
+                             @ViewBag.topic
                         </p>
-                        <div>
-                            <a href="#" type="button" class="btn btn-outline-dark-green btn-sm px-2 waves-effect show_login">
-                                <span class="value">1</span>
-                                <i class="far fa-thumbs-up ml-1"></i>
-                            </a>
-                            <a href="#" type="button" class="btn btn-outline-danger btn-sm px-2 waves-effect show_login">
-                                <span class="value">0</span>
-                                <i class="far fa-thumbs-down ml-1"></i>
-                            </a>
-                        </div>
+                       
                     </div>
                     <!--Card content-->
                     <div class="card-body">
-                        Does mdboostrap support or supply any forum template like this support forum? <hr>
                         <!-- Comments -->
                         <div class="comment-card ml-5">
                             <!-- Single comment -->
-                            <small class="comment-item text-muted">
-                                <p class="mb-2">
-                                    <strong><a href="https://mdbootstrap.com/profile/?id=72880" target="_blank">myusername</a></strong>
-                                    commented 1 months ago
-                                </p>
-                                <p>My test comment is here </p>
-                            </small>
-                            <hr>
-
+                           
                             <div class="form-group mb-0">
                                 <a href="#" class="btn btn-info btn-sm ml-0 comment-form-toggle show_login waves-effect waves-light">Add comment</a>
                             </div>
