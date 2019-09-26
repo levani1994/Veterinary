@@ -20,7 +20,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -337,6 +338,7 @@
     <Content Include="Views\Shared\_RecoveryLayout.cshtml" />
     <Content Include="Views\Account\PasswordChange.cshtml" />
     <Content Include="Views\Forum\Topic.cshtml" />
+    <Content Include="Views\Home\Interesting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
