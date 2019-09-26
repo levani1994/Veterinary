@@ -11,5 +11,6 @@ namespace Veterinary.Models
         [JsonProperty]
         public string TopicViewName { get; set; }
         public string TopicViewCategory { get; set; }
+        public string TopicCreateName { get; set; }
     }
 }

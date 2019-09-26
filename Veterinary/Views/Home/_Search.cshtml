@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Veterinary.Models.Food>
+
+    @foreach (var item in Model)
+    {
+        <div class="food-item">
+            <div class="img-wr">
+                <img src="~/images/Basics Dog Leashe.jpg" alt="Alternate Text" />
+            </div>
+            <div class="item-desc">
+                <p>@item.Name</p>
+                <span>@item.price</span>
+                <button>ყიდვა</button>
+            </div>
+        </div>
+    }
+

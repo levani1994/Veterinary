@@ -20,7 +20,9 @@ namespace Veterinary.Controllers
 
         public ActionResult Topic(string id)
         {
-            ViewBag.name = Session["user"];
+            var name = Session["user"];
+            var x = db.Topics.FirstOrDefault(z => z.TopicCreateName == Session["user"].ToString()).TopicCreateName;
+            ViewBag.name = x;
             ViewBag.topic = id;
             return View();
         }
@@ -40,7 +42,8 @@ namespace Veterinary.Controllers
             var DbTopic = new Topic()
             {
                 TopicName = topicViewModel.TopicViewName,
-                Category = topicViewModel.TopicViewCategory
+                Category = topicViewModel.TopicViewCategory,
+                 TopicCreateName = Session["user"].ToString()
 
             };
             db.Topics.InsertOnSubmit(DbTopic);

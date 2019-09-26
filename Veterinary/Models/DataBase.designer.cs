@@ -33,9 +33,6 @@ namespace Veterinary.Models
     partial void InsertCategory(Category instance);
     partial void UpdateCategory(Category instance);
     partial void DeleteCategory(Category instance);
-    partial void InsertTopic(Topic instance);
-    partial void UpdateTopic(Topic instance);
-    partial void DeleteTopic(Topic instance);
     partial void InsertNotConfirmedUser(NotConfirmedUser instance);
     partial void UpdateNotConfirmedUser(NotConfirmedUser instance);
     partial void DeleteNotConfirmedUser(NotConfirmedUser instance);
@@ -48,6 +45,9 @@ namespace Veterinary.Models
     partial void InsertCare(Care instance);
     partial void UpdateCare(Care instance);
     partial void DeleteCare(Care instance);
+    partial void InsertTopic(Topic instance);
+    partial void UpdateTopic(Topic instance);
+    partial void DeleteTopic(Topic instance);
     #endregion
 		
 		public DataBaseDataContext() : 
@@ -88,14 +88,6 @@ namespace Veterinary.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<Topic> Topics
-		{
-			get
-			{
-				return this.GetTable<Topic>();
-			}
-		}
-		
 		public System.Data.Linq.Table<NotConfirmedUser> NotConfirmedUsers
 		{
 			get
@@ -125,6 +117,14 @@ namespace Veterinary.Models
 			get
 			{
 				return this.GetTable<Care>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Topic> Topics
+		{
+			get
+			{
+				return this.GetTable<Topic>();
 			}
 		}
 	}
@@ -190,116 +190,6 @@ namespace Veterinary.Models
 					this._CategoryName = value;
 					this.SendPropertyChanged("CategoryName");
 					this.OnCategoryNameChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Topics")]
-	public partial class Topic : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _TopicName;
-		
-		private string _Category;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnTopicNameChanging(string value);
-    partial void OnTopicNameChanged();
-    partial void OnCategoryChanging(string value);
-    partial void OnCategoryChanged();
-    #endregion
-		
-		public Topic()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TopicName", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
-		public string TopicName
-		{
-			get
-			{
-				return this._TopicName;
-			}
-			set
-			{
-				if ((this._TopicName != value))
-				{
-					this.OnTopicNameChanging(value);
-					this.SendPropertyChanging();
-					this._TopicName = value;
-					this.SendPropertyChanged("TopicName");
-					this.OnTopicNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Category
-		{
-			get
-			{
-				return this._Category;
-			}
-			set
-			{
-				if ((this._Category != value))
-				{
-					this.OnCategoryChanging(value);
-					this.SendPropertyChanging();
-					this._Category = value;
-					this.SendPropertyChanged("Category");
-					this.OnCategoryChanged();
 				}
 			}
 		}
@@ -1076,6 +966,140 @@ namespace Veterinary.Models
 					this._price = value;
 					this.SendPropertyChanged("price");
 					this.OnpriceChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Topics")]
+	public partial class Topic : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _TopicName;
+		
+		private string _Category;
+		
+		private string _TopicCreateName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnTopicNameChanging(string value);
+    partial void OnTopicNameChanged();
+    partial void OnCategoryChanging(string value);
+    partial void OnCategoryChanged();
+    partial void OnTopicCreateNameChanging(string value);
+    partial void OnTopicCreateNameChanged();
+    #endregion
+		
+		public Topic()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TopicName", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
+		public string TopicName
+		{
+			get
+			{
+				return this._TopicName;
+			}
+			set
+			{
+				if ((this._TopicName != value))
+				{
+					this.OnTopicNameChanging(value);
+					this.SendPropertyChanging();
+					this._TopicName = value;
+					this.SendPropertyChanged("TopicName");
+					this.OnTopicNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this.OnCategoryChanging(value);
+					this.SendPropertyChanging();
+					this._Category = value;
+					this.SendPropertyChanged("Category");
+					this.OnCategoryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TopicCreateName", DbType="NVarChar(50)")]
+		public string TopicCreateName
+		{
+			get
+			{
+				return this._TopicCreateName;
+			}
+			set
+			{
+				if ((this._TopicCreateName != value))
+				{
+					this.OnTopicCreateNameChanging(value);
+					this.SendPropertyChanging();
+					this._TopicCreateName = value;
+					this.SendPropertyChanged("TopicCreateName");
+					this.OnTopicCreateNameChanged();
 				}
 			}
 		}
