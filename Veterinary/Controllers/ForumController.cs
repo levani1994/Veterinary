@@ -39,11 +39,22 @@ namespace Veterinary.Controllers
         [HttpPost]
         public JsonResult Category(TopicViewModel topicViewModel)
         {
+
+            string name;
+            if (Session["user"] !=null)
+            {
+                name = Session["user"].ToString();
+            }
+            else
+            {
+                name = "";
+            }
+
             var DbTopic = new Topic()
             {
                 TopicName = topicViewModel.TopicViewName,
                 Category = topicViewModel.TopicViewCategory,
-                TopicCreateName = Session["user"].ToString()
+                TopicCreateName = name
 
             };
             db.Topics.InsertOnSubmit(DbTopic);
