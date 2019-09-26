@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
 
 
-    $('#searchTerm').keyup(function () {
+    $('#searchTerm').keydown(function () {
         var term = $(this).val();
         $.ajax({
             url: '/Home/Search',
@@ -10,9 +10,30 @@
                 'searchTerm': term
             },
             success: function (response) {
-                console.log(response);
-            }
-        })
+                console.log(response, "response");
+                var result = ""
+
+                if (response.length > 0) {
+                    $.each(response, function (i, item) {
+                        result += "<div><p>" + response[i].Name + '</p> <p> ' + response[i].id + "</p></div>";
+                    });
+                } else {
+                    result += "<div><p>" + response.Name + '</p> <p> ' + "not found  </p></div>"
+                }
+
+                if (term.length > 0) {
+                    $("#search-result").show()
+                } else {
+                    result = "<div></div>"
+                    $("#search-result").hide()
+                    console.log('clear', result)
+                }
+
+                console.log(result, 'result')
+                $("#search-result").html(result); 
+
+            } 
+        })  
     });
 
 
