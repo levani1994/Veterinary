@@ -102,8 +102,8 @@ namespace Veterinary.Controllers
                 email.Password = Helper.ComputeSha256Hash(recoveryViewModel.NewPassword + Helper.AuthKey);
                 email.Token = null;
                 db.SubmitChanges();
-              
-                return RedirectToAction("Success");
+
+                return RedirectToAction("Index", "Home");
             }
             ViewBag.error = "პაროლები არ ემთხვევა";
             return View();
@@ -205,7 +205,7 @@ namespace Veterinary.Controllers
                         {
                             smtp.Send(mess);
                         }
-                        return RedirectToAction("Succes", new { email = NotConfirmedUser.Email });
+                        return RedirectToAction("Success");
                     }
                 }
                 catch (Exception)
