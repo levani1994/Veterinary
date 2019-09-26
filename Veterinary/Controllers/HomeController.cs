@@ -34,5 +34,12 @@ namespace Veterinary.Controllers
             ViewBag.name = Session["user"];
             return View();
         }  
+
+        public ActionResult Training()
+        {
+            ViewBag.name = Session["user"];
+            return View();
+        }
+
     }
 }
