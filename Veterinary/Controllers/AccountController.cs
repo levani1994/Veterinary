@@ -62,9 +62,9 @@ namespace Veterinary.Controllers
                 rec.Token = token;
                 db.SubmitChanges();
 
-                var senderEmail = new MailAddress("levani.jalaghonia09@geolab.edu.ge", "veterinar");
+                var senderEmail = new MailAddress("იმეილი", "veterinar");
                     var receiverEmail = new MailAddress(recoveryViewModel.EmailToBeRecover, "Receiver");
-                    var password = "eleanoragt";
+                    var password = "პაროლი";
                     var sub = "ელ.ფოსტის დადასტურება";
                 var body = "დაადასტურეთ თქვენი ელ.ფოსტა მოცემულ ლინკზე გადასვლით: http://localhost:54637/Account/PasswordChange/" + token; // view რო გვექნება მერე გავტესტავ, წესით უდნა იმუშაოს. შენ რომ გაუშვებ localHost შეცვალე
                     var smtp = new SmtpClient
