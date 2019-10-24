@@ -113,9 +113,9 @@ namespace Veterinary.Controllers
                 {
                     if (ModelState.IsValid)
                     {
-                        var senderEmail = new MailAddress("levani.jalaghonia09@geolab.edu.ge", "veterinar");
+                        var senderEmail = new MailAddress("მაილი", "veterinar");
                         var receiverEmail = new MailAddress(registrationViewModel.mail, "Receiver");
-                        var password = "eleanoragt";
+                        var password = "პაროლი";
                         var sub = "ელ.ფოსტის დადასტურება";
                         var body = "დაადასტურეთ თქვენი ელ.ფოსტა მოცემულ ლინკზე გადასვლით: http://localhost:54637/Account/Confirmation/" + confirmCode; // view რო გვექნება მერე გავტესტავ, წესით უდნა იმუშაოს. შენ რომ გაუშვებ localHost შეცვალე
                         var smtp = new SmtpClient
